@@ -1,0 +1,35 @@
+{
+  "BoardPage": "Board edit",
+  "Cancel": "Cancel",
+  "Copyright": "All Right Reserved",
+  "Delete": "Delete",
+  "Email": "Email address",
+  "Email-required": "Email is required",
+  "Error": "Error",
+  "ErrorPage": "Error 404",
+  "Firstname": "First Name",
+
+  "Lastname": "Last Name",
+  "Loading": "Loading . . . Please Wait",
+  "Login": "Login",
+  "Login-pass-err": "Incorrect login or password",
+  "Login-error": "Can't login? Write to the administrator",
+  "LoginPage": "Login",
+  "Logout": "Logout",
+
+  "MainPage": "Boards list",
+
+  "Password": "Password",
+  "Password-required": "Password is required",
+  "Register": "Register",
+  "Register-result": "You are registered! Click Login",
+  "Remember": "Remember me",
+
+  "Signup": "Registration",
+  "SiteTitle": "Project Management System",
+  "SiteSubTitle": "The Task of The Rolling Scopes School",
+  "Submit": "Submit",
+
+  "Username": "User name",
+  "Username-required": "Username is required"
+}
