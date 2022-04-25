@@ -49,9 +49,15 @@ import '@angular/localize/init';
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
-import 'zone.js';  // Included with Angular CLI.
-
+import 'zone.js'; // Included with Angular CLI.
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+import 'core-js/es/reflect';
+import 'core-js/es/map';
+import 'core-js/es/object';
+
+import 'core-js/proposals/reflect-metadata';
+(window as any)['global'] = window;
