@@ -9,6 +9,7 @@ select {
   margin: 0 5px 0 5px;
   padding: 0 2px 0 5px;
   border: 0;
+  cursor: pointer;
   &:focus, &:active {
     outline: 0;
   }

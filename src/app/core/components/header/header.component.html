@@ -5,9 +5,10 @@
     </button>
   </div>
   <img src="../../../../assets/images/logo-rs.svg" />
-  <div fxFlex fxLayout fxLayoutAlign="center" *ngIf="isLogged">
+  <div fxFlex fxLayout fxLayoutAlign="center" *ngIf="isLogged; else full">
     <h3 *ngIf="isMain">{{ "MainPage" | translate }}</h3>
   </div>
+  <ng-template #full><div fxFlex fxLayout></div></ng-template>
   <ul fxLayoutAlign="end" fxHide.xs>
     <ng-container *ngIf="isLogged; else login">
       <li *ngIf="!isMain">
@@ -25,7 +26,9 @@
           {{ "Profile" | translate }}
         </a>
       </li>
-      <app-language-switcher></app-language-switcher>
+    </ng-container>
+    <app-language-switcher></app-language-switcher>
+    <ng-container *ngIf="isLogged">
       <li>
         <a routerLink="#" (click)="logout()">
           <mat-icon> logout </mat-icon>
@@ -34,10 +37,9 @@
       </li>
     </ng-container>
     <ng-template #login>
-      <app-language-switcher></app-language-switcher>
       <li>
         <a routerLink="/login">
-          <mat-icon> Login </mat-icon>
+          <mat-icon> login </mat-icon>
           {{ "Login" | translate }}
         </a>
       </li>
