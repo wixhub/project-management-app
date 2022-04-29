@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+mat-sidenav-container, mat-sidenav-content {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+mat-sidenav {
+  flex: 1;
+}
+
+main {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+}

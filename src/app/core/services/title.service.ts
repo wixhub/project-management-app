@@ -6,8 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class TitleService {
-  private postfix = 'PMApp';
-  pageTitle = new BehaviorSubject('Start');
+  private postfix = 'P◦M◦App';
 
   constructor(private title: Title) {}
 
