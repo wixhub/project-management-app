@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-flow: row;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  vertical-align: middle;
+  list-style-type: none;
+  margin: 0 2px 0 6px;
+}
+
+mat-toolbar {
+  display: flex;
+  flex-flow: row;
+}
+
+@media(max-width: 959px) {
+  mat-toolbar{
+      border-radius: 0px;
+  }
+}
+
+img {
+  width: 60px;
+}

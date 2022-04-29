@@ -1,1 +1,44 @@
-<p>header works!</p>
+<mat-toolbar>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <img src="../../../../assets/images/logo-rs.svg" />
+  <div fxFlex fxLayout fxLayoutAlign="center" *ngIf="isLogged">
+    <h3 *ngIf="isMain">{{ "MainPage" | translate }}</h3>
+  </div>
+  <ul fxLayoutAlign="end" fxHide.xs>
+    <ng-container *ngIf="isLogged; else login">
+      <li *ngIf="!isMain">
+        <a routerLink="/home">{{ "MainPage" | translate }}</a>
+      </li>
+      <li>
+        <a routerLink="/board">
+          <mat-icon> add_card </mat-icon>
+          {{ "AddBoard" | translate }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/profile">
+          <mat-icon> account_circle </mat-icon>
+          {{ "Profile" | translate }}
+        </a>
+      </li>
+      <li>
+        <a routerLink="#" (click)="logout()">
+          <mat-icon> logout </mat-icon>
+          {{ "Logout" | translate }}
+        </a>
+      </li>
+    </ng-container>
+    <ng-template #login>
+      <li>
+        <a routerLink="/login">
+          <mat-icon> Login </mat-icon>
+          {{ "Login" | translate }}
+        </a>
+      </li>
+    </ng-template>
+  </ul>
+</mat-toolbar>
