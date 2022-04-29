@@ -1,4 +1,5 @@
 {
+  "AddBoard": "Add new board",
   "BoardPage": "Board edit",
   "Cancel": "Cancel",
   "Copyright": "All Right Reserved",
@@ -21,6 +22,7 @@
 
   "Password": "Password",
   "Password-required": "Password is required",
+  "Profile": "Profile",
   "Register": "Register",
   "Register-result": "You are registered! Click Login",
   "Remember": "Remember me",
