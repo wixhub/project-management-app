@@ -25,6 +25,7 @@
           {{ "Profile" | translate }}
         </a>
       </li>
+      <app-language-switcher></app-language-switcher>
       <li>
         <a routerLink="#" (click)="logout()">
           <mat-icon> logout </mat-icon>
@@ -33,6 +34,7 @@
       </li>
     </ng-container>
     <ng-template #login>
+      <app-language-switcher></app-language-switcher>
       <li>
         <a routerLink="/login">
           <mat-icon> Login </mat-icon>
