@@ -8,6 +8,7 @@ import { ContainerComponent } from './components/container/container.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
+import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component';
 
 const routes: Routes = [];
 
@@ -19,6 +20,7 @@ const routes: Routes = [];
     HeaderComponent,
     FooterComponent,
     SidenavListComponent,
+    LanguageSwitcherComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   exports: [RouterModule, HeaderComponent],
