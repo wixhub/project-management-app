@@ -2,4 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-flow: row wrap;
+  height: 10%;
+}
+
+a {
+  margin: 0 4px 0  4px;
+}
+
+img {
+  width: 80px;
 }
