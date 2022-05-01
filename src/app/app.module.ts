@@ -8,9 +8,6 @@ import AppRoutingModule from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import AuthModule from './auth/auth.module';
 import { interceptorProviders } from './interceptors';
 
 @NgModule({
@@ -20,10 +17,6 @@ import { interceptorProviders } from './interceptors';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CommonModule,
-    AuthModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
