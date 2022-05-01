@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
+import { CoreModule } from '../core/core.module';
 import { CommonModule } from '@angular/common';
-import CoreModule from '../core/core.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, CoreModule],
+  imports: [CoreModule, CommonModule, ReactiveFormsModule, FormsModule],
 })
 export default class AuthModule {}
