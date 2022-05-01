@@ -7,10 +7,15 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class TitleService {
   private postfix = 'P◦M◦App';
+  public headerTitle: BehaviorSubject<string> = new BehaviorSubject('');
 
   constructor(private title: Title) {}
 
-  setTitle(title: string) {
+  public setTitle(title: string): void {
     this.title.setTitle(`${title} | ${this.postfix}`);
+  }
+
+  public setHeaderTitle(parameter: string): void {
+    this.headerTitle.next(parameter);
   }
 }
