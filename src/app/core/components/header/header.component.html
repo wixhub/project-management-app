@@ -6,15 +6,15 @@
   </div>
   <img src="../../../../assets/images/logo-rs.svg" />
   <div fxFlex fxLayout fxLayoutAlign="center" *ngIf="isLogged; else full">
-    <h3 *ngIf="isMain">{{ "MainPage" | translate }}</h3>
+    <h3>{{ title | translate }}</h3>
   </div>
   <ng-template #full><div fxFlex fxLayout></div></ng-template>
   <ul fxLayoutAlign="end" fxHide.xs>
     <ng-container *ngIf="isLogged; else login">
-      <li *ngIf="!isMain">
-        <a routerLink="/home">{{ "MainPage" | translate }}</a>
+      <li *ngIf="currentPageUrl != '/main'">
+        <a routerLink="/main">{{ "MainPage" | translate }}</a>
       </li>
-      <li>
+      <li *ngIf="currentPageUrl == '/main'">
         <a routerLink="/board">
           <mat-icon> add_card </mat-icon>
           {{ "AddBoard" | translate }}
