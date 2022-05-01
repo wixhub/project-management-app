@@ -6,6 +6,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class BaseUrlInterceptorService implements HttpInterceptor {
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const endPoint = 'http://localhost:4200/';
+    const endPoint = environment.endpoint;
     return next.handle(
       req.url.startsWith('api') ? req.clone({ url: endPoint + req.url }) : req
     );
