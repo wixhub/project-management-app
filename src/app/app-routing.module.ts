@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import MainPageComponent from './main/pages/main-page/main-page.component';
 import ErrorPageComponent from './core/pages/error-page/error-page.component';
 import { ContainerComponent } from './core/components/container/container.component';
+import { LoginPageComponent } from './auth/pages/login-page/login-page.component';
+import { SignupPageComponent } from './auth/pages/signup-page/signup-page.component';
 
 const routes: Routes = [
   {
@@ -13,6 +15,14 @@ const routes: Routes = [
       {
         path: 'main',
         component: MainPageComponent,
+      },
+      {
+        path: 'login',
+        component: LoginPageComponent,
+      },
+      {
+        path: 'signup',
+        component: SignupPageComponent,
       },
       { path: '**', component: ErrorPageComponent },
     ],

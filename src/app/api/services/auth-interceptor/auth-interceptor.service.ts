@@ -6,11 +6,11 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AuthorizationService } from '../../../auth/services/authorization/authorization.service';
+import { AuthenticationService } from '../../../auth/services/authentication/authentication.service';
 
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
-  constructor(private auth: AuthorizationService) {}
+  constructor(private auth: AuthenticationService) {}
 
   intercept(
     req: HttpRequest<any>,
