@@ -1,10 +1,10 @@
 .start-page {
   &__section {
     width: 70vw;
-    margin-bottom: 10vh;
+    margin-bottom: 7vh;
 
     &:first-of-type {
-      margin-top: 15vh;
+      margin-top: 10vh;
     }
 
     &:last-of-type {
@@ -29,6 +29,15 @@
     font-size: 2rem;
     letter-spacing: 1.7px;
     line-height: 1.1;
+
+    &_left {
+      margin-left: -.5vw;
+      border-radius: 10px 3px 3px 3px;
+      padding: .5vh 0 0 .5vw;
+      border-top: 2px solid #212121;
+      border-left: 2px solid #212121;
+      box-shadow: inset 3px 3px 3px #21212118;
+    }
   }
 
   &__description {
@@ -36,6 +45,14 @@
     font-size: 1.2rem;
     letter-spacing: 1.3px;
     line-height: 1.3;
+
+    &_right {
+      border-radius: 3px 3px 10px 3px;
+      padding: 0 .5vw .5vh 0;
+      border-bottom: 2px solid #212121;
+      border-right: 2px solid #212121;
+      box-shadow: inset -3px -3px 3px #21212123;
+    }
   }
 }
 
