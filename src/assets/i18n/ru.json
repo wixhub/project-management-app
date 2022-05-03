@@ -36,13 +36,12 @@
   "Username-required": "Логин обязателен",
 
 
-  "startPage__about-header": "Project managment application helps to keep track on your project tasks",
-  "startPage__about-description": "With help of project managment application you can collaborate, manage projects and reach new productivity peaks. The way your team works can certainly be changed into a better one.",
-  "startPage__teamwork-header": "It’s more than work. It’s a way of working together.",
-  "startPage__teamwork-description": "Start with a creating a board, lists, and cards. Customize and expand with more features as your teamwork grows. Manage projects, organize tasks, and build team spirit—all in one place.",
-  "startPage__board-header": "The board is just the beginning",
-  "startPage__board-description": "Lists and cards are the building blocks of organizing work on a Board. Grow from there with task assignments, timelines, productivity metrics, calendars, and more.",
-  "startPage__card-header": "Cards contain everything you need",
-  "startPage__card-description": "Cards are your portal to more organized work—where every single part of your task can be managed, tracked, and shared with teammates. Open any card to uncover an ecosystem of checklists, due dates, attachments, conversations, and more."
-
+  "startPage__about-header": "Приложение для контроля проектов помогает управлять и следить за задачами вашего проекта",
+  "startPage__about-description": "Приложение для контроля проектов позволяет удобно работать командой, управлять проектами и повышать продуктивность. С помощью приложения режим работы вашей команды может быть значительно улучшен!",
+  "startPage__teamwork-header": "Это не просто работа - это способ работать вместе!",
+  "startPage__teamwork-description": "Начните с создания нового проекта, списков задач и карточек. Настраивайте и углубляйтесь в возможности приложения вместе с ростом вашей команды. Управляйте проектами, организуйте задачи и налаживайте командный дух - и всё это в одном месте.",
+  "startPage__board-header": "Проект - это только начало",
+  "startPage__board-description": "Списки задач и карточки являются основными элементами в огранизации проекта. Начинайте с распределения задач, времени и использования других вомзожностей.",
+  "startPage__card-header": "Карточки содержат все, что вам нужно",
+  "startPage__card-description": "Карточки - это ваше средство для более организованной работы, где каждая часть вашей задачи управляется, отслеживается и доступна участникам вашей команды."
 }
