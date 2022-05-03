@@ -1,1 +1,5 @@
-<h2 class="error-page__message"></h2>
+<h2 class="error-page__title">{{ "ErrorMessage-title" | translate }}</h2>
+<h3 class="error-page__message" *ngIf="message">{{ message }}</h3>
+<h3 class="error-page__message" *ngIf="!message">
+  {{ "ErrorMessage-default" | translate }}
+</h3>
