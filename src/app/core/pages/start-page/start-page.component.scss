@@ -1,5 +1,6 @@
 .start-page {
   &__section {
+    width: 70vw;
     margin-bottom: 10vh;
 
     &:first-of-type {
@@ -7,7 +8,7 @@
     }
 
     &:last-of-type {
-      margin-bottom: .5rem;
+      margin-bottom: 10vh;
     }
   }
 
@@ -39,5 +40,9 @@
 }
 
 :host {
-  width: 70vw;
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+  background-color: #BBE1FA;
+  color: #212121;
 }
