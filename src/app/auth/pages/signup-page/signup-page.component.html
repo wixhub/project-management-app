@@ -1,0 +1,90 @@
+<form class='form__container' [formGroup]='loginForm'>
+  <h3 class='form__title'>Sign up</h3>
+
+  <label for="name" class='form__input-title'>name</label>
+  <input
+    type='text'
+    class='form__input'
+    id='name'
+    formControlName='name'
+    autocomplete='off'
+    required
+    [ngClass]='name?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='name?.hasError("required")'>
+      Please enter a name
+    </p>
+  </div>
+
+
+  <label for="login" class='form__input-title'>login</label>
+  <input
+    type='text'
+    class='form__input'
+    id='login'
+    formControlName='login'
+    autocomplete='off'
+    required
+    [ngClass]='login?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='login?.hasError("required")'>
+      Please enter a login email
+    </p>
+    <p
+      class='validation-error'
+      *ngIf='login?.hasError("emailError")'>
+      The login email is invalid
+    </p>
+  </div>
+
+  <label for="password" class='form__input-title'>password</label>
+  <input
+    type='password'
+    class='form__input'
+    id='password'
+    formControlName='password'
+    required
+    [ngClass]='password?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='password?.hasError("required")'>
+      Please enter a password
+    </p>
+    <p
+      class='validation-error'
+      *ngIf='password?.hasError("minlength")'>
+      Password should be at least 8 characters long
+    </p>
+    <p
+      *ngIf='password?.errors && password?.value'
+      class='validation-error'>
+      Password is not strong enough. Consider to:
+    </p>
+    <p
+      class='validation-error validation-error__indented'
+      *ngIf='password?.hasError("letterCases")'>
+      combine both uppercase and lowercase letters
+    </p>
+    <p
+      class='validation-error validation-error__indented'
+      *ngIf='password?.hasError("numbers")'>
+      include numbers
+    </p>
+    <p
+      class='validation-error validation-error__indented'
+      *ngIf='password?.hasError("specialCharacter")'>
+      include special characters (?!#@)
+    </p>
+  </div>
+  <button
+    class='form__submit'
+    (click)='authorize()'
+    type="button"
+    [disabled]='haveNoValidationErrors()'>Sign up
+  </button>
+</form>

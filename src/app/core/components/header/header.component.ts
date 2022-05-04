@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthenticationService } from '../../../auth/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,10 @@ export class HeaderComponent {
   public isLogged = true;
   public isMain = true;
 
-  constructor(public translate: TranslateService) {
+  constructor(
+    public translate: TranslateService,
+    private auth: AuthenticationService
+  ) {
     translate.addLangs(['en', 'ru']);
     translate.setDefaultLang('en');
   }
@@ -21,5 +25,7 @@ export class HeaderComponent {
     this.sidenavToggle.emit();
   };
 
-  public logout() {}
+  public logout() {
+    this.auth.logout();
+  }
 }
