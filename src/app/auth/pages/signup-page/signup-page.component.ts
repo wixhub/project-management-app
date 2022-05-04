@@ -80,7 +80,7 @@ export class SignupPageComponent {
     return this.loginForm.get('password');
   }
 
-  haveNoValidationErrors(): ValidationErrors | undefined | null {
-    return this.login?.errors || this.password?.errors;
+  haveValidationErrors(): boolean {
+    return !(this.login?.errors === null && this.password?.errors === null);
   }
 }

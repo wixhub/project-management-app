@@ -13,6 +13,7 @@
   "Lastname": "Last Name",
   "Loading": "Loading . . . Please Wait",
   "Login": "Login",
+  "Login-name": "Login",
   "Login-pass-err": "Incorrect login or password",
   "Login-error": "Can't login? Write to the administrator",
   "LoginPage": "Login",
@@ -20,9 +21,12 @@
 
   "MainPage": "Boards list",
 
+  "Name": "Name",
+
   "Password": "Password",
   "Password-required": "Password is required",
   "Profile": "Profile",
+
   "Register": "Register",
   "Register-result": "You are registered! Click Login",
   "Remember": "Remember me",
@@ -33,5 +37,15 @@
   "Submit": "Submit",
 
   "Username": "User name",
-  "Username-required": "Username is required"
+  "Username-required": "Username is required",
+
+  "Validation-login": "Please, enter a login email",
+  "Validation-login-error": "The login email is invalid",
+  "Validation-name": "Please, enter a name",
+  "Validation-password": "Please, enter a password",
+  "Validation-password-general": "Password is not strong enough. Consider to:",
+  "Validation-password-numbers": "include numbers",
+  "Validation-password-short": "Password should be at least 8 characters long",
+  "Validation-password-special": "include special characters (?!#@)",
+  "Validation-password-upper": "combine both uppercase and lowercase letters"
 }

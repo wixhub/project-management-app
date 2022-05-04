@@ -13,6 +13,7 @@
   "Lastname": "Фамилия",
   "Loading": "Загрузка . . . Подождите, пожалуйста",
   "Login": "Войти",
+  "Login-name": "Логин",
   "Login-pass-err": "Неправильный логин или пароль",
   "Login-error": "Не можете войти? Напишите администратору",
   "LoginPage": "Вход",
@@ -20,9 +21,12 @@
 
   "MainPage": "Список",
 
+  "Name": "Имя",
+
   "Password": "Пароль",
   "Password-required": "Пароль обязателен",
   "Profile": "Профиль",
+
   "Register": "Регистрация",
   "Register-result": "Вы успешно зарегистрированы. Нажмите 'Войти'",
   "Remember": "Запомнить меня",
@@ -33,5 +37,15 @@
   "Submit": "Отправить",
 
   "Username": "Логин: латинскиe строчныe буквы без пробелов",
-  "Username-required": "Логин обязателен"
+  "Username-required": "Логин обязателен",
+
+  "Validation-login": "Пожалуйста, введите адрес почты",
+  "Validation-login-error": "Неверный адрес почты",
+  "Validation-name": "Пожалуйста, введите имя",
+  "Validation-password": "Пожалуйста, введите пароль",
+  "Validation-password-general": "Слабый пароль. Используйте:",
+  "Validation-password-numbers": "цифры",
+  "Validation-password-short": "Пароль должен состоять минимум из 8 символов",
+  "Validation-password-special": "специальные символы (?!#@)",
+  "Validation-password-upper": "буквы верхнего и нижнего регистра"
 }

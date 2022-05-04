@@ -32,14 +32,9 @@
   margin-left: auto;
   width: 125px;
   height: 30px;
-  background-color: ma;
   border: none;
   border-radius: 5px;
-  color: white;
   font-size: 12px;
-  &:disabled {
-    background-color: #999;
-  }
 }
 
 .form__title {

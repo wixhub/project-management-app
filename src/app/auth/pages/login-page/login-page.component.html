@@ -1,7 +1,7 @@
 <form class='form__container' [formGroup]='loginForm'>
-  <h3 class='form__title'>Sign in</h3>
+  <h3 class='form__title'>{{ "LoginPage" | translate }}</h3>
 
-  <label for="login" class='form__input-title'>login</label>
+  <label for="login" class='form__input-title'>{{ "Login-name" | translate }}</label>
   <input
     type='text'
     class='form__input'
@@ -14,11 +14,11 @@
     <p
       class='validation-error'
       *ngIf='login?.hasError("required")'>
-      Please enter a login email
+      {{ "Validation-login" | translate }}
     </p>
   </div>
 
-  <label for="password" class='form__input-title'>password</label>
+  <label for="password" class='form__input-title'>{{ "Password" | translate }}</label>
   <input
     type='password'
     class='form__input'
@@ -30,13 +30,15 @@
     <p
       class='validation-error'
       *ngIf='password?.hasError("required")'>
-      Please enter a password
+      {{ "Validation-password" | translate }}
     </p>
   </div>
   <button
+    mat-raised-button
+    color="accent"
     class='form__submit'
     (click)='signin()'
     type="button"
-    [disabled]='haveNoValidationErrors()'>Sign in
+    [disabled]='haveValidationErrors()'>{{ "Login" | translate }}
   </button>
 </form>
