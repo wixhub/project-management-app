@@ -6,6 +6,7 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {environment} from "../../../../environments/environment";
 import { AuthenticationService } from '../../../auth/services/authentication/authentication.service';
 
 @Injectable()
@@ -18,8 +19,8 @@ export class AuthInterceptorService implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     let newReq = req;
     if (
-      req.url.startsWith('api') &&
-      !(req.url.startsWith('api/signup') || req.url.startsWith('api/signin'))
+      req.url.startsWith(environment.endpoint) &&
+      !(req.url.startsWith(environment.endpoint + 'signup') || req.url.startsWith(environment.endpoint + 'signin'))
     ) {
       newReq = req.clone({
         setHeaders: {

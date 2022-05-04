@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  endpoint: 'https://blooming-caverns-00678.herokuapp.com/',
 };
