@@ -1,0 +1,42 @@
+<form class='form__container' [formGroup]='loginForm'>
+  <h3 class='form__title'>Sign in</h3>
+
+  <label for="login" class='form__input-title'>login</label>
+  <input
+    type='text'
+    class='form__input'
+    id='login'
+    formControlName='login'
+    autocomplete='off'
+    required
+    [ngClass]='login?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='login?.hasError("required")'>
+      Please enter a login email
+    </p>
+  </div>
+
+  <label for="password" class='form__input-title'>password</label>
+  <input
+    type='password'
+    class='form__input'
+    id='password'
+    formControlName='password'
+    required
+    [ngClass]='password?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='password?.hasError("required")'>
+      Please enter a password
+    </p>
+  </div>
+  <button
+    class='form__submit'
+    (click)='signin()'
+    type="button"
+    [disabled]='haveNoValidationErrors()'>Sign in
+  </button>
+</form>

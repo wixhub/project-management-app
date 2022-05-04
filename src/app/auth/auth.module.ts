@@ -6,7 +6,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
-  declarations: [SignupPageComponent, SignupPageComponent, LoginPageComponent],
+  declarations: [SignupPageComponent, LoginPageComponent],
   imports: [ReactiveFormsModule, FormsModule, CommonModule, MatFormFieldModule],
 })
 export default class AuthModule {}
