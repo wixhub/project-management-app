@@ -13,9 +13,11 @@
   "Lastname": "Last Name",
   "Loading": "Loading . . . Please Wait",
   "Login": "Login",
+  "Login-error": "Can't login? Write to the administrator",
   "Login-name": "Login",
   "Login-pass-err": "Incorrect login or password",
-  "Login-error": "Can't login? Write to the administrator",
+  "Login-question": "Already have an account?",
+  "Login-welcome": "Login",
   "LoginPage": "Login",
   "Logout": "Logout",
 
@@ -32,6 +34,8 @@
   "Remember": "Remember me",
 
   "Signup": "Registration",
+  "Signup-question": "Don't have an account?",
+  "Signup-welcome": "Sign up",
   "SiteTitle": "Project Management System",
   "SiteSubTitle": "The Task of The Rolling Scopes School",
   "Submit": "Submit",

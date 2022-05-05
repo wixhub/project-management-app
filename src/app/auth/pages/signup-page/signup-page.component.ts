@@ -5,7 +5,6 @@ import {
   AbstractControl,
   FormControl,
   FormGroup,
-  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { RegexValidationService } from '../../services/regex-validation/regex-validation.service';

@@ -1,5 +1,7 @@
 <form class='form__container' [formGroup]='loginForm'>
   <h3 class='form__title'>{{ "LoginPage" | translate }}</h3>
+  <p class='form__question'>{{ "Signup-question" | translate }}<a class="form__link" routerLink="/signup"
+  >{{ "Signup-welcome" | translate }}</a></p>
 
   <label for="login" class='form__input-title'>{{ "Login-name" | translate }}</label>
   <input
@@ -34,8 +36,6 @@
     </p>
   </div>
   <button
-    mat-raised-button
-    color="accent"
     class='form__submit'
     (click)='signin()'
     type="button"

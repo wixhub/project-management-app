@@ -14,8 +14,10 @@
   "Loading": "Загрузка . . . Подождите, пожалуйста",
   "Login": "Войти",
   "Login-name": "Логин",
-  "Login-pass-err": "Неправильный логин или пароль",
   "Login-error": "Не можете войти? Напишите администратору",
+  "Login-pass-err": "Неправильный логин или пароль",
+  "Login-question": "Уже есть аккаунт?",
+  "Login-welcome": "Войти",
   "LoginPage": "Вход",
   "Logout": "Выйти",
 
@@ -32,6 +34,8 @@
   "Remember": "Запомнить меня",
 
   "Signup": "Регистрация",
+  "Signup-question": "Нет аккаунта?",
+  "Signup-welcome": "Зарегистрируйтесь",
   "SiteTitle": "Система управления проектами",
   "SiteSubTitle": "Курсовой проект Rolling Scopes School",
   "Submit": "Отправить",
