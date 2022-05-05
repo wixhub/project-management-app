@@ -1,17 +1,21 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {
+  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {catchError, Observable, throwError} from 'rxjs';
 import {environment} from "../../../../environments/environment";
-import { AuthenticationService } from '../../../auth/services/authentication/authentication.service';
+import {AuthenticationService} from '../../../auth/services/authentication/authentication.service';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
-  constructor(private auth: AuthenticationService) {}
+  constructor(private auth: AuthenticationService,
+              private router: Router) {
+  }
 
   intercept(
     req: HttpRequest<any>,
@@ -28,6 +32,12 @@ export class AuthInterceptorService implements HttpInterceptor {
         },
       });
     }
-    return next.handle(newReq);
+    return next.handle(newReq).pipe(catchError((errorResponse: HttpErrorResponse) => {
+      if (errorResponse.status === 401) {
+        this.router.navigate(['/login']).then();
+      }
+      return throwError(() => {
+        return new Error(`${errorResponse.message}`);})
+    }));
   }
 }
