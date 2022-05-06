@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endpoint: 'http://localhost:4200/',
+  endpoint: 'https://blooming-caverns-00678.herokuapp.com/',
 };
 
 /*
