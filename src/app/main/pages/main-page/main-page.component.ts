@@ -7,7 +7,7 @@ import { TitleService } from 'src/app/core/services/title.service';
   styleUrls: ['./main-page.component.scss'],
 })
 export class MainPageComponent implements OnInit {
-  public boardList = [];
+  public boardList = ['1'];
   constructor(private title: TitleService) {}
   ngOnInit() {
     this.title.setTitle('Boards');
