@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication/authentication.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-login-page',
@@ -21,6 +22,8 @@ export class LoginPageComponent {
       login: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
     });
+    this.login?.setValue(environment.login);
+    this.password?.setValue(environment.password);
   }
 
   signin(): void {
