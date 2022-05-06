@@ -1,3 +1,21 @@
+.main-page {
+  &__btn-create {
+    border: none;
+    outline: none;
+    padding: 1rem 4rem;
+    border-radius: .5rem;
+    font-size: 1.45rem;
+    background-color: #BBE1FA;
+    color: #212121;
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 2px 2px 8px lighten(#212121, 20%);
+    }
+  }
+}
+
 :host {
   margin-top: 5vh;
   height: 100%;
