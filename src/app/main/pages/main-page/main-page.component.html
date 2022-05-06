@@ -1,1 +1,11 @@
-<p>main-page works!</p>
+<div *ngIf="!boardList">
+  <p class="main-page__default">{{ "mainPage__default" }}</p>
+</div>
+<button class="main-page__btn-create">
+  {{ "mainPage__btn-create" }}
+</button>
+<div *ngIf="boardList">
+  <ul>
+    <li *ngFor="let board of boardList">{{ "board.name" }}</li>
+  </ul>
+</div>
