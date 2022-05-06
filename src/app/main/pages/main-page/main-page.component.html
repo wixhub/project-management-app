@@ -6,7 +6,9 @@
 </button>
 <div *ngIf="boardList.length >= 1">
   <h2 class="main-page__content">{{ "mainPage__content" | translate }}</h2>
-  <ul>
-    <li *ngFor="let board of boardList">{{ "board.name" }}</li>
+  <ul class="main-page__list">
+    <li class="main-page__item" *ngFor="let board of boardList">
+      {{ "board.name" }}
+    </li>
   </ul>
 </div>
