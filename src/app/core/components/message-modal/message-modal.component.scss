@@ -1,0 +1,22 @@
+@import "src/styles";
+
+.modal__container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 200px;
+  background-color: $color-background-gray;
+  border: black 2px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal__btn {
+  display: block;
+}

@@ -6,7 +6,7 @@
     <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
     <main>
       <router-outlet></router-outlet>
-      <app-message-modal></app-message-modal>
+      <app-message-modal *ngIf="isModalVisible" (showMe) = "isModalVisible = $event" [text] = "messageText"></app-message-modal>
     </main>
     <app-footer></app-footer>
   </mat-sidenav-content>

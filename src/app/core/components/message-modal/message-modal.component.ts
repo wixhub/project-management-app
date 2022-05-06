@@ -1,4 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { ShowMessageService } from '../../../api/services/show-message/show-message.service';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-message-modal',
@@ -6,7 +15,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./message-modal.component.scss'],
 })
 export class MessageModalComponent {
-  text: string = '';
+  @Output() showMe = new EventEmitter<boolean>(false);
 
-  constructor() {}
+  @Input() text = '';
+
+  constructor() {
+    console.log('init modal');
+  }
+
+  closeMessage() {
+    this.showMe.emit(false);
+  }
 }
