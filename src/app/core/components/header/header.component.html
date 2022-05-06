@@ -15,7 +15,7 @@
         <a routerLink="/main">{{ "MainPage" | translate }}</a>
       </li>
       <li *ngIf="currentPageUrl == '/main'">
-        <a routerLink="/board">
+        <a routerLink="#" (click)="addNewBoard()">
           <mat-icon> add_card </mat-icon>
           {{ "AddBoard" | translate }}
         </a>
