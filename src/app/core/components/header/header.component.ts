@@ -6,7 +6,6 @@ import {
   Output,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { Subject, takeUntil } from 'rxjs';
 import { TitleService } from '../../services/title.service';
 
@@ -23,13 +22,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public userName = 'userName';
   public isLogged = true;
 
-  constructor(
-    public translate: TranslateService,
-    private titleService: TitleService,
-    private router: Router
-  ) {
-    translate.addLangs(['en', 'ru']);
-    translate.setDefaultLang('en');
+  constructor(private titleService: TitleService, private router: Router) {
     this.currentPageUrl = this.router.url;
   }
 
@@ -45,6 +38,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
   };
+
+  public addNewBoard() {}
 
   public logout() {}
 
