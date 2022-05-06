@@ -37,7 +37,7 @@
   "Username-required": "Username is required",
 
   "ErrorMessage-title": "404 error 😱",
-  "ErrorMessage-default": "Something went wrong or works improperly. Please try to reload page in order to fix the problem. If it doesn't help - then please try to navigate to root route - that should do it."
+  "ErrorMessage-default": "Something went wrong or works improperly. Please try to reload page in order to fix the problem. If it doesn't help - then please try to navigate to root route - that should do it.",
 
   "startPage__about-header": "Project managment application helps to keep track on your project tasks",
   "startPage__about-description": "With help of project managment application you can collaborate, manage projects and reach new productivity peaks. The way your team works can certainly be changed into a better one.",
