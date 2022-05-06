@@ -37,10 +37,8 @@ export class AuthenticationService {
       if ('token' in data) {
         localStorage.setItem(LocalStorageKeys.authToken, data.token);
         const id = this.decodeToken(data.token);
-        localStorage.setItem(LocalStorageKeys.authToken, id);
+        localStorage.setItem(LocalStorageKeys.userId, id);
         subs.unsubscribe();
-      } else if ('statusCode' in data && data.statusCode === 403) {
-        // data.message
       }
     });
     return signin;
@@ -58,10 +56,8 @@ export class AuthenticationService {
   }
 
   signup(credentials: IUserCredentials) {
-    this.database.signUp(credentials).subscribe((data) => {
-      if ('statusCode' in data && data.statusCode === 409) {
-        // data.message
-      }
+    const subs = this.database.signUp(credentials).subscribe(() => {
+      subs.unsubscribe();
     });
   }
 }
