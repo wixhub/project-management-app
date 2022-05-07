@@ -1,3 +1,59 @@
+.main-page {
+
+  &__default,
+  &__content {
+    margin-top: 3vh;
+    font-size: 1.6rem;
+  }
+
+  &__btn-create {
+    border: none;
+    outline: none;
+    margin-top: 2vh;
+    padding: 1rem 4rem;
+    border-radius: .5rem;
+    font-size: 1.45rem;
+    background-color: #212121;
+    color: #FF2E63;
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 2px 2px 8px lighten(#212121, 20%);
+      color: darken(#FF2E63, 10%);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    // width: fit-content;
+    margin: .5rem 0;
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    border: 1px solid #212121;
+    font-size: 1.25rem;
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken(#BBE1FA, 15%);
+    }
+  }
+}
+
 :host {
+  height: 100%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #BBE1FA;
+  color: #212121;
 }
