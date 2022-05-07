@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { DatabaseService } from '../../../api/services/database/database.service';
 import { Router } from '@angular/router';
 import {
@@ -8,18 +8,20 @@ import {
   TUserSignIn,
 } from '../../../api/models/APISchemas';
 import { LocalStorageKeys } from '../../models/localStorageKeys';
-import { map, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { ITokenInfo } from '../../models/token';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService implements OnInit {
-  isLogged$: Subject<boolean> = new Subject();
+export class AuthenticationService {
+  isLogged$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor(private database: DatabaseService, private rout: Router) {}
+  constructor(private database: DatabaseService, private rout: Router) {
+    this.init();
+  }
 
-  ngOnInit(): void {
+  init(): void {
     if (this.token) {
       this.isLogged$.next(true);
     } else {
@@ -63,7 +65,7 @@ export class AuthenticationService implements OnInit {
     localStorage.removeItem(LocalStorageKeys.userId);
     localStorage.removeItem(LocalStorageKeys.login);
     this.isLogged$.next(false);
-    this.rout.navigate(['']).then();
+    this.rout.navigate(['/login']).then();
   }
 
   login(userData: TUserSignIn): Observable<IError | ITokenResponse> {
