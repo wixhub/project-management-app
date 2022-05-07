@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { DatabaseService } from '../../../api/services/database/database.service';
 import { Router } from '@angular/router';
 import {
@@ -8,14 +8,28 @@ import {
   TUserSignIn,
 } from '../../../api/models/APISchemas';
 import { LocalStorageKeys } from '../../models/localStorageKeys';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ITokenInfo } from '../../models/token';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService {
+export class AuthenticationService implements OnInit {
+  isLogged$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
   constructor(private database: DatabaseService, private rout: Router) {}
+
+  ngOnInit(): void {
+    if (this.token) {
+      this.isLogged$.next(true);
+    } else {
+      this.isLogged$.next(false);
+    }
+  }
+
+  getLogStatus(): Observable<boolean> {
+    return this.isLogged$.asObservable();
+  }
 
   get token(): string {
     let key = '';
@@ -28,6 +42,7 @@ export class AuthenticationService {
   logout() {
     localStorage.removeItem(LocalStorageKeys.authToken);
     localStorage.removeItem(LocalStorageKeys.userId);
+    this.isLogged$.next(false);
     this.rout.navigate(['']).then();
   }
 
@@ -38,6 +53,7 @@ export class AuthenticationService {
         localStorage.setItem(LocalStorageKeys.authToken, data.token);
         const id = this.decodeToken(data.token);
         localStorage.setItem(LocalStorageKeys.userId, id);
+        this.isLogged$.next(true);
         subs.unsubscribe();
       }
     });

@@ -26,7 +26,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(
     private titleService: TitleService,
     private router: Router,
-    private auth: AuthenticationService,) {
+    private auth: AuthenticationService
+  ) {
     this.currentPageUrl = this.router.url;
   }
 
@@ -37,6 +38,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.router.events.subscribe(
       (path: any) => (this.currentPageUrl = path.url)
     );
+    this.auth
+      .getLogStatus()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((status) => (this.isLogged = status));
   }
 
   public onToggleSidenav = () => {
