@@ -27,6 +27,7 @@
   "Name": "Имя",
 
   "Password": "Пароль",
+  "Password-new": "Новый пароль",
   "Password-required": "Пароль обязателен",
   "Profile": "Профиль",
 
@@ -41,6 +42,7 @@
   "SiteSubTitle": "Курсовой проект Rolling Scopes School",
   "Submit": "Отправить",
 
+  "Update": "Обновить",
   "Username": "Логин: латинскиe строчныe буквы без пробелов",
   "Username-required": "Логин обязателен",
 
@@ -48,6 +50,7 @@
   "Validation-login-error": "Неверный адрес почты",
   "Validation-name": "Пожалуйста, введите имя",
   "Validation-password": "Пожалуйста, введите пароль",
+  "Validation-password-new": "Пожалуйста, введите новый пароль",
   "Validation-password-general": "Слабый пароль. Используйте:",
   "Validation-password-numbers": "цифры",
   "Validation-password-short": "Пароль должен состоять минимум из 8 символов",

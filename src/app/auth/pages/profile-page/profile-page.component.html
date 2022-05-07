@@ -1,0 +1,98 @@
+<form class='form__container' [formGroup]='loginForm'>
+  <h3 class='form__title'>{{ "Profile" | translate }}</h3>
+
+  <label for="name" class='form__input-title'>{{ "Name" | translate }}</label>
+  <input
+    type='text'
+    class='form__input'
+    id='name'
+    formControlName='name'
+    autocomplete='off'
+    required
+    [ngClass]='name?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='name?.hasError("required")'>
+      {{ "Validation-name" | translate }}
+    </p>
+  </div>
+
+
+  <label for="login" class='form__input-title'>{{ "Login-name" | translate }}</label>
+  <input
+    type='text'
+    class='form__input'
+    id='login'
+    formControlName='login'
+    autocomplete='off'
+    required
+    [ngClass]='login?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='login?.hasError("required")'>
+      {{ "Validation-login" | translate }}
+    </p>
+    <p
+      class='validation-error'
+      *ngIf='login?.hasError("emailError")'>
+      {{ "Validation-login-error" | translate }}
+    </p>
+  </div>
+
+  <label for="password" class='form__input-title'>{{ "Password-new" | translate }}</label>
+  <input
+    type='password'
+    class='form__input'
+    id='password'
+    formControlName='password'
+    autoComplete="current-password"
+    required
+    [ngClass]='password?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='password?.hasError("required")'>
+      {{ "Validation-password-new" | translate }}
+    </p>
+    <p
+      class='validation-error'
+      *ngIf='password?.hasError("minlength")'>
+      {{ "Validation-password-short" | translate }}
+    </p>
+    <p
+      *ngIf='password?.errors && password?.value'
+      class='validation-error'>
+      {{ "Validation-password-general" | translate }}
+    </p>
+    <p
+      class='validation-error validation-error__indented'
+      *ngIf='password?.hasError("letterCases")'>
+      {{ "Validation-password-upper" | translate }}
+    </p>
+    <p
+      class='validation-error validation-error__indented'
+      *ngIf='password?.hasError("numbers")'>
+      {{ "Validation-password-numbers" | translate }}
+    </p>
+    <p
+      class='validation-error validation-error__indented'
+      *ngIf='password?.hasError("specialCharacter")'>
+      {{ "Validation-password-special" | translate }}
+    </p>
+  </div>
+<div class="buttons__block">
+  <button
+    class='form__submit'
+    (click)='delete()'
+    type="button">{{ "Delete" | translate }}
+  </button>
+  <button
+    class='form__submit'
+    (click)='update()'
+    type="button"
+    [disabled]='haveValidationErrors()'>{{ "Update" | translate }}
+  </button>
+</div>
+</form>

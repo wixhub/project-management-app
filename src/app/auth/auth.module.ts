@@ -7,9 +7,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 @NgModule({
-  declarations: [SignupPageComponent, LoginPageComponent],
+  declarations: [SignupPageComponent, LoginPageComponent, ProfilePageComponent],
   imports: [
     ReactiveFormsModule,
     FormsModule,

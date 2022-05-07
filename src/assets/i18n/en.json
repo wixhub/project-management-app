@@ -27,6 +27,7 @@
   "Name": "Name",
 
   "Password": "Password",
+  "Password-new": "New password",
   "Password-required": "Password is required",
   "Profile": "Profile",
 
@@ -41,6 +42,7 @@
   "SiteSubTitle": "The Task of The Rolling Scopes School",
   "Submit": "Submit",
 
+  "Update": "Update",
   "Username": "User name",
   "Username-required": "Username is required",
 
@@ -48,6 +50,7 @@
   "Validation-login-error": "The login email is invalid",
   "Validation-name": "Please, enter a name",
   "Validation-password": "Please, enter a password",
+  "Validation-password-new": "Please, enter a new password",
   "Validation-password-general": "Password is not strong enough. Consider to:",
   "Validation-password-numbers": "include numbers",
   "Validation-password-short": "Password should be at least 8 characters long",
