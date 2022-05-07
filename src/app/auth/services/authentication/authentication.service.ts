@@ -8,7 +8,7 @@ import {
   TUserSignIn,
 } from '../../../api/models/APISchemas';
 import { LocalStorageKeys } from '../../models/localStorageKeys';
-import { Observable, Subject } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
 import { ITokenInfo } from '../../models/token';
 
 @Injectable({
@@ -43,20 +43,25 @@ export class AuthenticationService implements OnInit {
     return localStorage.getItem(LocalStorageKeys.login) ?? '';
   }
 
-  get userName(): string {
-    let name = '';
-    const subs = this.database.getUsers().subscribe((data) => {
-      if (Array.isArray(data)) {
-        name = data.find((user) => user.id === this.userId)?.name ?? '';
-      }
-      subs.unsubscribe();
-    });
-    return name;
+  get userName$(): Observable<string> {
+    return this.database.getUsers().pipe(
+      map((data) => {
+        if (Array.isArray(data)) {
+          return (
+            data.find((user) => {
+              return user.id === this.userId;
+            })?.name ?? ''
+          );
+        }
+        return '';
+      })
+    );
   }
 
   logout() {
     localStorage.removeItem(LocalStorageKeys.authToken);
     localStorage.removeItem(LocalStorageKeys.userId);
+    localStorage.removeItem(LocalStorageKeys.login);
     this.isLogged$.next(false);
     this.rout.navigate(['']).then();
   }
@@ -91,6 +96,18 @@ export class AuthenticationService implements OnInit {
 
   signup(credentials: IUserCredentials) {
     const subs = this.database.signUp(credentials).subscribe(() => {
+      subs.unsubscribe();
+    });
+  }
+
+  update(id: string, userInfo: IUserCredentials) {
+    const subs = this.database.updateUser(id, userInfo).subscribe(() => {
+      subs.unsubscribe();
+    });
+  }
+
+  delete(id: string) {
+    const subs = this.database.deleteUser(id).subscribe(() => {
       subs.unsubscribe();
     });
   }
