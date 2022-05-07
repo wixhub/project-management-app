@@ -8,14 +8,14 @@ import {
   TUserSignIn,
 } from '../../../api/models/APISchemas';
 import { LocalStorageKeys } from '../../models/localStorageKeys';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { ITokenInfo } from '../../models/token';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService implements OnInit {
-  isLogged$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  isLogged$: Subject<boolean> = new Subject();
 
   constructor(private database: DatabaseService, private rout: Router) {}
 
@@ -32,11 +32,26 @@ export class AuthenticationService implements OnInit {
   }
 
   get token(): string {
-    let key = '';
-    if (localStorage.getItem(LocalStorageKeys.authToken)) {
-      key = localStorage.getItem(LocalStorageKeys.authToken) as string;
-    }
-    return key;
+    return localStorage.getItem(LocalStorageKeys.authToken) ?? '';
+  }
+
+  get userId(): string {
+    return localStorage.getItem(LocalStorageKeys.userId) ?? '';
+  }
+
+  get userLogin(): string {
+    return localStorage.getItem(LocalStorageKeys.login) ?? '';
+  }
+
+  get userName(): string {
+    let name = '';
+    const subs = this.database.getUsers().subscribe((data) => {
+      if (Array.isArray(data)) {
+        name = data.find((user) => user.id === this.userId)?.name ?? '';
+      }
+      subs.unsubscribe();
+    });
+    return name;
   }
 
   logout() {
@@ -51,8 +66,9 @@ export class AuthenticationService implements OnInit {
     const subs = signin.subscribe((data) => {
       if ('token' in data) {
         localStorage.setItem(LocalStorageKeys.authToken, data.token);
-        const id = this.decodeToken(data.token);
+        const [id, login] = [...this.decodeToken(data.token)];
         localStorage.setItem(LocalStorageKeys.userId, id);
+        localStorage.setItem(LocalStorageKeys.login, login);
         this.isLogged$.next(true);
         subs.unsubscribe();
       }
@@ -60,15 +76,17 @@ export class AuthenticationService implements OnInit {
     return signin;
   }
 
-  decodeToken(token: string) {
+  decodeToken(token: string): string[] {
     let id = '';
+    let login = '';
     try {
       const tokenInfo: ITokenInfo = JSON.parse(atob(token.split('.')[1]));
       id = tokenInfo.userId;
+      login = tokenInfo.login;
     } catch (e) {
       console.log(e);
     }
-    return id;
+    return [id, login];
   }
 
   signup(credentials: IUserCredentials) {
