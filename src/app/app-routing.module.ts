@@ -6,6 +6,7 @@ import { SignupPageComponent } from './auth/pages/signup-page/signup-page.compon
 import { LoginPageComponent } from './auth/pages/login-page/login-page.component';
 import { ProfilePageComponent } from './auth/pages/profile-page/profile-page.component';
 import { AuthGuard } from './auth/guards/auth.guard';
+import { StartPageComponent } from './core/pages/start-page/start-page.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
     component: ContainerComponent,
     children: [
       { path: '', redirectTo: 'main', pathMatch: 'full' },
+      {
+        path: 'start',
+        component: StartPageComponent,
+      },
       {
         path: 'main',
         loadChildren: () =>
