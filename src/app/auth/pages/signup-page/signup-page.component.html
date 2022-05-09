@@ -1,4 +1,4 @@
-<form class='form__container' [formGroup]='loginForm'>
+<form class='form__container' [formGroup]='loginForm' (ngSubmit)="authorize()">
   <h3 class='form__title'>{{ "Signup" | translate }}</h3>
   <p class='form__question'>{{ "Login-question" | translate }}<a class="form__link" routerLink="/login"
   >{{ "Login-welcome" | translate }}</a></p>
@@ -86,8 +86,7 @@
   </div>
   <button
     class='form__submit'
-    (click)='authorize()'
-    type="button"
+    type="submit"
     [disabled]='haveValidationErrors()'>{{ "Signup" | translate }}
   </button>
 </form>
