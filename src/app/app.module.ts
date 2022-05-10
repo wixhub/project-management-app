@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { interceptorProviders } from './interceptors';
 import { HttpLoaderFactory } from './shared/shared.module';
+import AuthModule from "./auth/auth.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { HttpLoaderFactory } from './shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
+    AuthModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

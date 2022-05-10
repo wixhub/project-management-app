@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
 import {
+  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { AuthorizationService } from '../../../auth/services/authorization/authorization.service';
-import {environment} from "../../../../environments/environment";
+import { catchError, Observable, throwError } from 'rxjs';
+import { environment } from '../../../../environments/environment';
+import { AuthenticationService } from '../../../auth/services/authentication/authentication.service';
+import { Router } from '@angular/router';
+import { ShowMessageService } from '../show-message/show-message.service';
 
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
-  constructor(private auth: AuthorizationService) {}
+  constructor(
+    private auth: AuthenticationService,
+    private router: Router,
+    private message: ShowMessageService
+  ) {}
 
   intercept(
     req: HttpRequest<any>,
@@ -20,7 +27,10 @@ export class AuthInterceptorService implements HttpInterceptor {
     let newReq = req;
     if (
       req.url.startsWith(environment.endpoint) &&
-      !(req.url.startsWith(environment.endpoint + 'signup') || req.url.startsWith(environment.endpoint + 'signin'))
+      !(
+        req.url.startsWith(environment.endpoint + 'signup') ||
+        req.url.startsWith(environment.endpoint + 'signin')
+      )
     ) {
       newReq = req.clone({
         setHeaders: {
@@ -28,6 +38,16 @@ export class AuthInterceptorService implements HttpInterceptor {
         },
       });
     }
-    return next.handle(newReq);
+    return next.handle(newReq).pipe(
+      catchError((errorResponse: HttpErrorResponse) => {
+        if (errorResponse.status === 401 || errorResponse.status === 403) {
+          this.router.navigate(['/login']).then();
+        }
+        this.message.showMessage(`${errorResponse.message}`);
+        return throwError(() => {
+          return new Error(`${errorResponse.message}`);
+        });
+      })
+    );
   }
 }

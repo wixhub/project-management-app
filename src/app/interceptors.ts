@@ -5,11 +5,11 @@ import { AuthInterceptorService } from './api/services/auth-interceptor/auth-int
 import { LogInterceptorService } from './api/services/log-interceptor/log-interceptor.service';
 
 export const interceptorProviders = [
-  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
   {
     provide: HTTP_INTERCEPTORS,
     useClass: BaseUrlInterceptorService,
     multi: true,
   },
+  { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true },
   { provide: HTTP_INTERCEPTORS, useClass: LogInterceptorService, multi: true },
 ];

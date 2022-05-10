@@ -1,9 +1,24 @@
 import { NgModule } from '@angular/core';
+import { SignupPageComponent } from './pages/signup-page/signup-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { TranslateModule } from '@ngx-translate/core';
+import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, ReactiveFormsModule],
+  declarations: [SignupPageComponent, LoginPageComponent, ProfilePageComponent],
+  imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
+    MatFormFieldModule,
+    TranslateModule,
+    SharedModule,
+    RouterModule,
+  ],
 })
-export class AuthModule {}
+export default class AuthModule {}

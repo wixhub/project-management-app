@@ -50,7 +50,7 @@ export type TTaskInfoExtended = Omit<ITask, 'id'>;
 export type TTaskInfo = Omit<TTaskInfoExtended, 'boardId' | 'columnId'>;
 
 export interface IError {
-  statusCode: string;
+  statusCode: number;
   message: string;
 }
 
