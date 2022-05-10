@@ -48,7 +48,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.sidenavToggle.emit();
   };
 
-  public addNewBoard() {}
+  public addNewBoard() {
+    this.router.navigate([`/main`, `new`]);
+  }
 
   public logout() {
     this.auth.logout();

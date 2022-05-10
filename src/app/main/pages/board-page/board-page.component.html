@@ -1,1 +1,4 @@
-<app-board-view></app-board-view>
+<ng-container *ngIf="boardId; else newBoard">
+  <app-board-view></app-board-view>
+</ng-container>
+<ng-template #newBoard><app-new-board-view></app-new-board-view></ng-template>
