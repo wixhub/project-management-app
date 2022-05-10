@@ -54,6 +54,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.auth.logout();
   }
 
+  public deleteUser() {
+    this.auth.delete(this.auth.userId);
+    this.auth.logout();
+  }
+
   ngOnDestroy() {
     this.destroy$.next(true);
     this.destroy$.complete();

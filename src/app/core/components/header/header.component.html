@@ -4,11 +4,13 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <img src="../../../../assets/images/logo-rs.svg"  alt="Rolling Scope School"/>
+  <img src="../../../../assets/images/logo-rs.svg" alt="Rolling Scope School"/>
   <div fxFlex fxLayout fxLayoutAlign="center" *ngIf="isLogged; else full">
     <h3>{{ title | translate }}</h3>
   </div>
-  <ng-template #full><div fxFlex fxLayout></div></ng-template>
+  <ng-template #full>
+    <div fxFlex fxLayout></div>
+  </ng-template>
   <ul fxLayoutAlign="end" fxHide.xs>
     <ng-container *ngIf="isLogged; else login">
       <li *ngIf="currentPageUrl != '/main'">
@@ -16,22 +18,27 @@
       </li>
       <li *ngIf="currentPageUrl == '/main'">
         <a routerLink="#" (click)="addNewBoard()">
-          <mat-icon> add_card </mat-icon>
+          <mat-icon> add_card</mat-icon>
           {{ "AddBoard" | translate }}
         </a>
       </li>
       <li>
         <a routerLink="/profile">
-          <mat-icon> account_circle </mat-icon>
+          <mat-icon> account_circle</mat-icon>
           {{ "Profile" | translate }}
         </a>
+      </li>
+      <li *ngIf="currentPageUrl == '/profile'">
+        <button mat-raised-button color="accent" (click)="deleteUser()">
+          {{ "Delete-profile" | translate }}
+        </button>
       </li>
     </ng-container>
     <app-language-switcher></app-language-switcher>
     <ng-container *ngIf="isLogged">
       <li>
         <a routerLink="#" (click)="logout()">
-          <mat-icon> logout </mat-icon>
+          <mat-icon> logout</mat-icon>
           {{ "Logout" | translate }}
         </a>
       </li>
@@ -39,7 +46,7 @@
     <ng-template #login>
       <li>
         <a routerLink="/login">
-          <mat-icon> login </mat-icon>
+          <mat-icon> login</mat-icon>
           {{ "Login" | translate }}
         </a>
       </li>
