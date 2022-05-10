@@ -27,11 +27,15 @@ export class LoginPageComponent {
   }
 
   signin(): void {
-    this.auth.login({
-      login: this.login?.value,
-      password: this.password?.value,
-    });
-    this.router.navigate(['/main']).then();
+    const subs = this.auth
+      .login({
+        login: this.login?.value,
+        password: this.password?.value,
+      })
+      .subscribe(() => {
+        this.router.navigate(['/main']).then();
+        subs.unsubscribe();
+      });
   }
 
   get login(): AbstractControl | null {

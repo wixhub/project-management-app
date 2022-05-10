@@ -68,19 +68,18 @@ export class AuthenticationService {
     this.rout.navigate(['/start']).then();
   }
 
-  login(userData: TUserSignIn): Observable<IError | ITokenResponse> {
-    const signin = this.database.signIn(userData);
-    const subs = signin.subscribe((data) => {
-      if ('token' in data) {
-        localStorage.setItem(LocalStorageKeys.authToken, data.token);
-        const [id, login] = [...this.decodeToken(data.token)];
-        localStorage.setItem(LocalStorageKeys.userId, id);
-        localStorage.setItem(LocalStorageKeys.login, login);
-        this.isLogged$.next(true);
-        subs.unsubscribe();
-      }
-    });
-    return signin;
+  login(userData: TUserSignIn) {
+    return this.database.signIn(userData).pipe(
+      map<IError | ITokenResponse, void>((data) => {
+        if ('token' in data) {
+          localStorage.setItem(LocalStorageKeys.authToken, data.token);
+          const [id, login] = [...this.decodeToken(data.token)];
+          localStorage.setItem(LocalStorageKeys.userId, id);
+          localStorage.setItem(LocalStorageKeys.login, login);
+          this.isLogged$.next(true);
+        }
+      })
+    );
   }
 
   decodeToken(token: string): string[] {
