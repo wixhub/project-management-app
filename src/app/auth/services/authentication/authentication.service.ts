@@ -65,7 +65,7 @@ export class AuthenticationService {
     localStorage.removeItem(LocalStorageKeys.userId);
     localStorage.removeItem(LocalStorageKeys.login);
     this.isLogged$.next(false);
-    this.rout.navigate(['/login']).then();
+    this.rout.navigate(['/start']).then();
   }
 
   login(userData: TUserSignIn): Observable<IError | ITokenResponse> {

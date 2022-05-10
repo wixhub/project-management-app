@@ -13,7 +13,7 @@ const routes: Routes = [
     path: '',
     component: ContainerComponent,
     children: [
-      { path: '', redirectTo: 'main', pathMatch: 'full' },
+      { path: '', redirectTo: 'start', pathMatch: 'full' },
       {
         path: 'start',
         component: StartPageComponent,
