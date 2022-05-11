@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TitleService } from 'src/app/core/services/title.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-board-page',
@@ -7,7 +8,12 @@ import { TitleService } from 'src/app/core/services/title.service';
   styleUrls: ['./board-page.component.scss'],
 })
 export class BoardPageComponent implements OnInit {
-  constructor(private title: TitleService) {}
+  public boardId!: number;
+  constructor(private title: TitleService, route: ActivatedRoute) {
+    route.params.subscribe((params) => {
+      this.boardId = parseInt(params['id']);
+    });
+  }
 
   ngOnInit() {
     this.title.setTitle('Board');

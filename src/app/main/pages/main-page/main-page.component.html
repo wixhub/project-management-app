@@ -1,14 +1,17 @@
-<div *ngIf="boardList.length < 1">
-  <h2 class="main-page__default">{{ "mainPage__default" | translate }}</h2>
+<div *ngIf="boardList$ | async; let items">
+  <ng-container *ngIf="items.length > 0; else noData">
+    <h2 class="main-page__content">{{ "mainPage__content" | translate }}</h2>
+    <ul class="main-page__list">
+      <app-board-item *ngFor="let item of items" [item]="item"></app-board-item>
+    </ul>
+  </ng-container>
+  <button class="main-page__btn-create" (click)="addNewBoard()">
+    {{ "mainPage__btn-create" | translate }}
+  </button>
+  <ng-template #noData
+    ><h2 class="main-page__default">
+      {{ "mainPage__default" | translate }}
+    </h2></ng-template
+  >
 </div>
-<button class="main-page__btn-create">
-  {{ "mainPage__btn-create" | translate }}
-</button>
-<div *ngIf="boardList.length >= 1">
-  <h2 class="main-page__content">{{ "mainPage__content" | translate }}</h2>
-  <ul class="main-page__list">
-    <li class="main-page__item" *ngFor="let board of boardList">
-      {{ "board.name" }}
-    </li>
-  </ul>
-</div>
+<mat-spinner *ngIf="loading$ | async"></mat-spinner>
