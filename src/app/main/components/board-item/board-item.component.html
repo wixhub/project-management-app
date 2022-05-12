@@ -1,4 +1,5 @@
-<li class="main-page__item" [routerLink]="['/main', { id: item.id }]">
+<!-- <li class="main-page__item" [routerLink]="['/main', { id: item.id }]"> -->
+<li class="main-page__item" (click)="onClickOpenBoard()">
   <span class="main-page__item-descr">{{
     "mainPage__board-item" | translate
   }}</span

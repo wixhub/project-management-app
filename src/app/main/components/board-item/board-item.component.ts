@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { IBoard } from 'src/app/api/models/APISchemas';
 
@@ -9,7 +10,11 @@ import { IBoard } from 'src/app/api/models/APISchemas';
 export class BoardItemComponent implements OnInit {
   @Input() public item!: IBoard;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  onClickOpenBoard() {
+    this.router.navigate(['main', this.item.id]);
+  }
 }
