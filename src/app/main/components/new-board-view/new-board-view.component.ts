@@ -18,7 +18,7 @@ export class NewBoardViewComponent implements OnInit {
   onClickCreateBoard(event: Event, boardName: string) {
     event.preventDefault();
     if (boardName) {
-      this.databaseService.createBoard(boardName);
+      this.databaseService.createBoard(boardName).subscribe();;
       this.router.navigate(['main']);
     }
   }

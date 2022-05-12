@@ -61,6 +61,7 @@
   "mainPage__default": "There is currently no boards were created, you can make one.",
   "mainPage__content": "List of existing boards: ",
   "mainPage__btn-create": "Create new board",
+  "mainPage__board-item": "Board name: ",
 
   "ErrorMessage-title": "404 error 😱",
   "ErrorMessage-default": "Something went wrong or works improperly. Please try to reload page in order to fix the problem. If it doesn't help - then please try to navigate to root route - that should do it.",
