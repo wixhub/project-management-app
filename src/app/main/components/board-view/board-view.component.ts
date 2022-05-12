@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './board-view.component.html',
   styleUrls: ['./board-view.component.scss'],
 })
-export class BoardViewComponent {}
+export class BoardViewComponent {
+  
+}

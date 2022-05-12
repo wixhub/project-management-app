@@ -1,1 +1,17 @@
-<p>new-board-view works!</p>
+<form class="board board__form">
+  <label class="board__name-label" for="new-board__name">{{
+    "board__create-board_name" | translate
+  }}</label>
+  <input
+    class="board__name-input"
+    type="board__name"
+    id="new-board__name"
+    #boardName
+  />
+  <button
+    class="board__btn"
+    (click)="onClickCreateBoard($event, boardName.value)"
+  >
+    {{ "board__create-board" | translate }}
+  </button>
+</form>
