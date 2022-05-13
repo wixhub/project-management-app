@@ -2,3 +2,38 @@
   display: flex;
   flex-flow: row;
 }
+
+.board {
+  &__container {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__create-col {
+    border: none;
+    outline: none;
+    width: fit-content;
+    justify-self: end;
+    margin-top: 3.5vh;
+    padding: .5rem 2rem;
+    border-radius: 5px;
+    font-size: 1.15rem;
+    background-color: #212121;
+    color: #FF2E63;
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 2px 2px 8px lighten(#212121, 20%);
+      color: darken(#FF2E63, 10%);
+    }
+  }
+}
+
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

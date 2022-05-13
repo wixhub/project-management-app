@@ -1,1 +1,13 @@
-<div>+ {{ "AddColumn" | translate }}</div>
+<div class="board board__container">
+  <div class="board__create-col" (click)="onClickCreateColumn()">
+    + {{ "AddColumn" | translate }}
+  </div>
+  <ul class="board__column-list" *ngIf="boardColumnArr$ | async">
+    <app-board-column
+      *ngFor="let column of boardColumnArr$ | async"
+      [column]="column"
+      [boardId]="boardId"
+    >
+    </app-board-column>
+  </ul>
+</div>
