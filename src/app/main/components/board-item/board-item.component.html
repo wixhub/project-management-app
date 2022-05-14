@@ -1,1 +1,6 @@
-<li class="main-page__item">{{ "board.name" }}</li>
+<li class="main-page__item" (click)="onClickOpenBoard()">
+  <span class="main-page__item-descr">{{
+    "mainPage__board-item" | translate
+  }}</span
+  ><span class="main-page__item-name">{{ item.title }}</span>
+</li>

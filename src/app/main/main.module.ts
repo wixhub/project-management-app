@@ -8,6 +8,8 @@ import { BoardViewComponent } from './components/board-view/board-view.component
 import { AuthGuard } from '../auth/guards/auth.guard';
 import { NewBoardViewComponent } from './components/new-board-view/new-board-view.component';
 import { BoardItemComponent } from './components/board-item/board-item.component';
+import { BoardColumnComponent } from './components/board-column/board-column.component';
+import { BoardCardComponent } from './components/board-card/board-card.component';
 
 const routes: Routes = [
   {
@@ -29,6 +31,8 @@ const routes: Routes = [
     BoardPageComponent,
     NewBoardViewComponent,
     BoardItemComponent,
+    BoardColumnComponent,
+    BoardCardComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   exports: [RouterModule],

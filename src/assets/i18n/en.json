@@ -61,6 +61,7 @@
   "mainPage__default": "There is currently no boards were created, you can make one.",
   "mainPage__content": "List of existing boards: ",
   "mainPage__btn-create": "Create new board",
+  "mainPage__board-item": "Board name: ",
 
   "ErrorMessage-title": "404 error 😱",
   "ErrorMessage-default": "Something went wrong or works improperly. Please try to reload page in order to fix the problem. If it doesn't help - then please try to navigate to root route - that should do it.",
@@ -73,5 +74,8 @@
   "startPage__board-header": "The board is just the beginning",
   "startPage__board-description": "Lists and cards are the building blocks of organizing work on a Board. Grow from there with task assignments, timelines, and more.",
   "startPage__card-header": "Cards contain everything you need",
-  "startPage__card-description": "Cards are your portal to more organized work—where every single part of your task can be managed, tracked, and shared with teammates."
+  "startPage__card-description": "Cards are your portal to more organized work—where every single part of your task can be managed, tracked, and shared with teammates.",
+
+  "board__create-board_name": "New board name",
+  "board__create-board": "Create board"
 }
