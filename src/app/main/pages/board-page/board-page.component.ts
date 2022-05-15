@@ -17,11 +17,9 @@ export class BoardPageComponent implements OnInit {
   ngOnInit() {
     this.title.setTitle('Board');
     this.title.setHeaderTitle('BoardPage');
-    this.route.params
-      .pipe(takeUntil(this.destroy$), take(1))
-      .subscribe((params) => {
-        this.boardId = params['id'];
-      });
+    this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
+      this.boardId = params['id'];
+    });
   }
 
   ngOnDestroy() {

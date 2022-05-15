@@ -1,12 +1,19 @@
 <div *ngIf="boardList$ | async; let items">
   <ng-container *ngIf="items.length > 0; else noData">
     <h2 class="main-page__content">{{ "mainPage__content" | translate }}</h2>
-    <ul class="main-page__list">
-      <app-board-item
-        *ngFor="let item of items"
-        [item]="item"
-        (removed)="deleteItem()"
-      ></app-board-item>
+    <ul cdkDropListGroup class="main-page__list">
+      <div
+        cdkDropList
+        [cdkDropListData]="boardsList"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <app-board-item
+          cdkDrag
+          *ngFor="let item of items"
+          [item]="item"
+          (removed)="deleteItem()"
+        ></app-board-item>
+      </div>
     </ul>
   </ng-container>
   <button class="main-page__btn-create" (click)="addNewBoard()">

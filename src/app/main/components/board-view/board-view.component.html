@@ -3,13 +3,22 @@
   <div class="board__create-col" (click)="onClickCreateColumn()">
     + {{ "AddColumn" | translate }}
   </div>
-  <ul class="board__column-list" *ngIf="boardColumnArr$ | async; let columns">
-    <app-board-column
-      *ngFor="let column of columns"
-      [column]="column"
-      [boardId]="boardId"
-      (removed)="deleteItem()"
+  <ul cdkDropListGroup *ngIf="boardColumnArr$ | async; let columns">
+    <div
+      cdkDropList
+      class="board__column-list"
+      cdkDropListOrientation="horizontal"
+      [cdkDropListData]="listData"
+      (cdkDropListDropped)="drop($event)"
     >
-    </app-board-column>
+      <app-board-column
+        cdkDrag
+        *ngFor="let column of columns"
+        [column]="column"
+        [boardId]="boardId"
+        (removed)="deleteItem()"
+      >
+      </app-board-column>
+    </div>
   </ul>
 </div>

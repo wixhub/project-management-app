@@ -5,6 +5,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { CreateColumnDialogComponent } from '../create-column-dialog/create-column-dialog.component';
 import { TColumnInfo } from '../../../api/models/APISchemas';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-board-view',
@@ -14,6 +19,7 @@ import { TColumnInfo } from '../../../api/models/APISchemas';
 export class BoardViewComponent implements OnInit {
   @Input() boardId!: string;
   public boardColumnArr$!: Observable<IColumn[]>;
+  listData!: IColumn[];
   boardName!: string;
   columnsCount: number = 0;
 
@@ -33,6 +39,7 @@ export class BoardViewComponent implements OnInit {
     this.boardColumnArr$ = this.databaseService.getColumns(this.boardId).pipe(
       map((data) => {
         if (Array.isArray(data)) {
+          this.listData = data;
           this.columnsCount = data.length;
           return data;
         }
@@ -70,6 +77,23 @@ export class BoardViewComponent implements OnInit {
         .createColumn(this.boardId, newColumn)
         .subscribe(() => this.getList());
     });
+  }
+
+  drop(event: CdkDragDrop<IColumn[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
   }
 
   deleteItem() {
