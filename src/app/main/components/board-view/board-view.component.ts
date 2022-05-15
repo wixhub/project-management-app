@@ -4,6 +4,7 @@ import { DatabaseService } from './../../../api/services/database/database.servi
 import { Component, Input, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { CreateColumnDialogComponent } from '../create-column-dialog/create-column-dialog.component';
+import { TColumnInfo } from '../../../api/models/APISchemas';
 
 @Component({
   selector: 'app-board-view',
@@ -12,8 +13,10 @@ import { CreateColumnDialogComponent } from '../create-column-dialog/create-colu
 })
 export class BoardViewComponent implements OnInit {
   @Input() boardId!: string;
-  boardName!: string;
   public boardColumnArr$!: Observable<IColumn[]>;
+  boardName!: string;
+  columnsCount: number = 0;
+
   constructor(
     private databaseService: DatabaseService,
     private dialog: MatDialog
@@ -26,6 +29,7 @@ export class BoardViewComponent implements OnInit {
     this.boardColumnArr$ = this.databaseService.getColumns(this.boardId).pipe(
       map((data) => {
         if (Array.isArray(data)) {
+          this.columnsCount = data.length;
           return data;
         }
         return [];
@@ -54,7 +58,11 @@ export class BoardViewComponent implements OnInit {
     );
 
     dialogRef.afterClosed().subscribe((data) => {
-      this.databaseService.createColumn(this.boardId, data);
+      const newColumn: TColumnInfo = {
+        title: data,
+        order: this.columnsCount + 1,
+      };
+      this.databaseService.createColumn(this.boardId, newColumn);
     });
   }
 }

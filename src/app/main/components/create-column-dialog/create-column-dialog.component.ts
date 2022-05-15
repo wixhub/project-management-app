@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { TColumnInfo } from '../../../api/models/APISchemas';
 
 @Component({
   selector: 'app-create-column-dialog',
@@ -27,9 +26,7 @@ export class CreateColumnDialogComponent implements OnInit {
   }
 
   save() {
-    const title = this.form.get('title')?.value;
-    const newColumn: TColumnInfo = { title: title, order: 0 };
-    this.dialogRef.close(newColumn);
+    this.dialogRef.close(this.form.get('title')?.value);
   }
 
   close() {
