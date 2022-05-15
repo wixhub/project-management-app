@@ -1,6 +1,6 @@
 <li class="board-page__item">
   <span class="board-page__item-descr"
-    >{{ "column__title-column" | translate }}: </span
+    >{{ "board__title-column" | translate }}: </span
   ><span class="board-page__item-name">{{ column.title }}</span>
   <mat-icon (click)="deleteColumn()">delete</mat-icon>
   <mat-icon (click)="onClickCreateCard()">add</mat-icon>
@@ -8,7 +8,8 @@
     <app-board-card
       *ngFor="let card of cards"
       [card]="card"
-      (removed)="deleteCard()"
+      (edited)="refresh()"
+      (removed)="refresh()"
     >
     </app-board-card>
   </ul>

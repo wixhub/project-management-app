@@ -3,26 +3,30 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-create-task-dialog',
-  templateUrl: './create-task-dialog.component.html',
-  styleUrls: ['./create-task-dialog.component.scss'],
+  selector: 'app-task-dialog',
+  templateUrl: './task-dialog.component.html',
+  styleUrls: ['./task-dialog.component.scss'],
 })
-export class CreateTaskDialogComponent implements OnInit {
+export class TaskDialogComponent implements OnInit {
   form!: FormGroup;
   dialogTitle: string;
+  formTitle: string;
+  formDescription: string;
 
   constructor(
     private fb: FormBuilder,
-    private dialogRef: MatDialogRef<CreateTaskDialogComponent>,
+    private dialogRef: MatDialogRef<TaskDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data: any
   ) {
     this.dialogTitle = data.dialogTitle;
+    this.formTitle = data.formTitle;
+    this.formDescription = data.formDescription;
   }
 
   ngOnInit() {
     this.form = this.fb.group({
-      title: ['', []],
-      description: ['', []],
+      title: [this.formTitle, []],
+      description: [this.formDescription, []],
     });
   }
 

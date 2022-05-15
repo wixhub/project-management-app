@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { DatabaseService } from './../../../api/services/database/database.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { CreateTaskDialogComponent } from '../create-task-dialog/create-task-dialog.component';
+import { TaskDialogComponent } from '../task-dialog/task-dialog.component';
 import { IColumn, ITask, TTaskInfo } from './../../../api/models/APISchemas';
 import { AuthenticationService } from 'src/app/auth/services/authentication/authentication.service';
 import {
@@ -53,21 +53,23 @@ export class BoardColumnComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     dialogConfig.data = {
-      dialogTitle: 'AddColumn',
+      dialogTitle: 'AddTask',
     };
 
-    const dialogRef = this.dialog.open(CreateTaskDialogComponent, dialogConfig);
+    const dialogRef = this.dialog.open(TaskDialogComponent, dialogConfig);
 
     dialogRef.afterClosed().subscribe((data) => {
-      const newTask: TTaskInfo = {
-        title: data.title,
-        order: this.tasksCount + 1,
-        description: data.description,
-        userId: this.auth.userId,
-      };
-      this.database
-        .createTask(this.boardId, this.column.id, newTask)
-        .subscribe(() => this.getList());
+      if (data) {
+        const newTask: TTaskInfo = {
+          title: data.title,
+          order: this.tasksCount + 1,
+          description: data.description,
+          userId: this.auth.userId,
+        };
+        this.database
+          .createTask(this.boardId, this.column.id, newTask)
+          .subscribe(() => this.getList());
+      }
     });
   }
 
@@ -96,7 +98,7 @@ export class BoardColumnComponent implements OnInit {
     });
   }
 
-  deleteCard() {
+  refresh() {
     this.getList();
   }
 }

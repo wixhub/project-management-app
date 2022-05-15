@@ -13,7 +13,7 @@ import { BoardColumnComponent } from './components/board-column/board-column.com
 import { BoardCardComponent } from './components/board-card/board-card.component';
 import { NewBoardPageComponent } from './pages/new-board-page/new-board-page.component';
 import { CreateColumnDialogComponent } from './components/create-column-dialog/create-column-dialog.component';
-import { CreateTaskDialogComponent } from './components/create-task-dialog/create-task-dialog.component';
+import { TaskDialogComponent } from './components/task-dialog/task-dialog.component';
 
 const routes: Routes = [
   {
@@ -44,7 +44,7 @@ const routes: Routes = [
     BoardCardComponent,
     NewBoardPageComponent,
     CreateColumnDialogComponent,
-    CreateTaskDialogComponent,
+    TaskDialogComponent,
   ],
   imports: [
     CommonModule,
