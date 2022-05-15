@@ -1,8 +1,12 @@
 <div class="board board__container">
+  <h3>{{ boardName }}</h3>
   <div class="board__create-col" (click)="onClickCreateColumn()">
     + {{ "AddColumn" | translate }}
   </div>
   <ul class="board__column-list" *ngIf="boardColumnArr$ | async; let columns">
+    {{
+      columns.length
+    }}
     <app-board-column
       *ngFor="let column of columns"
       [column]="column"

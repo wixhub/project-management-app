@@ -5,6 +5,8 @@
   "Cancel": "Отменить",
   "Copyright": "Все права защищены. Копирование запрещено.",
   "Delete": "Удалить",
+  "Delete-board": "Вы хотите удалить этот проект?",
+  "Delete-title": "Удаление проекта",
   "Delete-profile": "Удалить профиль",
   "Email": "Email адрес",
   "Email-required": "Email обязателен",
@@ -26,6 +28,7 @@
   "MainPage": "Список",
 
   "Name": "Имя",
+  "NewBoardPage": "Создание проекта",
 
   "Password": "Пароль",
   "Password-new": "Новый пароль",
@@ -77,5 +80,8 @@
   "startPage__card-description": "Карточки - это ваше средство для более организованной работы, где каждая часть вашей задачи управляется, отслеживается и доступна участникам вашей команды.",
 
   "board__create-board_name": "Название проекта",
-  "board__create-board": "Создать проект"
+  "board__create-board": "Создать проект",
+  "board__create-board_description": "Описание проекта",
+
+  "column__title-column": "Заголовок колонки"
 }

@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>
+  {{ title | translate }}
+</h1>
+
+<div mat-dialog-content>
+  <p>{{ message | translate }}</p>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onDelete()">{{ "Cancel" | translate }}</button>
+  <button mat-raised-button (click)="onCommand()">
+    {{ commandName | translate }}
+  </button>
+</div>

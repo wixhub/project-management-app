@@ -22,6 +22,10 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
     this.title.setTitle('Boards');
     this.title.setHeaderTitle('MainPage');
+    this.getList();
+  }
+
+  getList() {
     this.boardList$ = this.database.getBoards().pipe(
       map((data) => {
         if (Array.isArray(data)) {
@@ -34,5 +38,9 @@ export class MainPageComponent implements OnInit {
 
   addNewBoard() {
     this.router.navigate([`main`, `new`]);
+  }
+
+  deleteItem() {
+    this.getList();
   }
 }

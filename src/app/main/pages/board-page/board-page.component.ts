@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TitleService } from 'src/app/core/services/title.service';
 import { ActivatedRoute } from '@angular/router';
+import { Subject, take, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-board-page',
@@ -8,15 +9,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./board-page.component.scss'],
 })
 export class BoardPageComponent implements OnInit {
-  public boardId!: number;
-  constructor(private title: TitleService, route: ActivatedRoute) {
-    route.params.subscribe((params) => {
-      this.boardId = parseInt(params['id']);
-    });
-  }
+  public boardId!: string;
+  private destroy$: Subject<boolean> = new Subject();
+
+  constructor(private title: TitleService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.title.setTitle('Board');
     this.title.setHeaderTitle('BoardPage');
+    this.route.params
+      .pipe(takeUntil(this.destroy$), take(1))
+      .subscribe((params) => {
+        this.boardId = params['id'];
+      });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next(true);
+    this.destroy$.complete();
   }
 }
