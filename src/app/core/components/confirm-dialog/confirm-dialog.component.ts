@@ -22,7 +22,8 @@ export class ConfirmDialogComponent {
   onCommand(): void {
     this.dialogRef.close(true);
   }
-  onDelete(): void {
+
+  onCancel(): void {
     this.dialogRef.close(false);
   }
 }
