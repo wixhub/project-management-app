@@ -26,6 +26,10 @@ export class BoardViewComponent implements OnInit {
     this.databaseService
       .getBoards()
       .subscribe((data: any) => (this.boardName = this.getBoardName(data)));
+    this.getList();
+  }
+
+  getList() {
     this.boardColumnArr$ = this.databaseService.getColumns(this.boardId).pipe(
       map((data) => {
         if (Array.isArray(data)) {
@@ -62,7 +66,13 @@ export class BoardViewComponent implements OnInit {
         title: data,
         order: this.columnsCount + 1,
       };
-      this.databaseService.createColumn(this.boardId, newColumn);
+      this.databaseService
+        .createColumn(this.boardId, newColumn)
+        .subscribe(() => this.getList());
     });
+  }
+
+  deleteItem() {
+    this.getList();
   }
 }

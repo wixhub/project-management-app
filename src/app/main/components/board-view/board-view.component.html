@@ -4,13 +4,11 @@
     + {{ "AddColumn" | translate }}
   </div>
   <ul class="board__column-list" *ngIf="boardColumnArr$ | async; let columns">
-    {{
-      columns.length
-    }}
     <app-board-column
       *ngFor="let column of columns"
       [column]="column"
       [boardId]="boardId"
+      (removed)="deleteItem()"
     >
     </app-board-column>
   </ul>

@@ -1,1 +1,6 @@
-<p>board-card works!</p>
+<li class="board-page__item">
+  <span class="board-page__item-descr"
+    >{{ "board__title-card" | translate }}: </span
+  ><span class="board-page__item-name">{{ card.title }}</span>
+  <mat-icon (click)="deleteCard()">delete</mat-icon>
+</li>
