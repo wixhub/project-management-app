@@ -6,11 +6,34 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { ProfileDeletePageComponent } from './pages/profile-delete-page/profile-delete-page.component';
+import { AuthGuard } from './guards/auth.guard';
+
+const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginPageComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupPageComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfilePageComponent,
+    canActivate: [AuthGuard],
+  },
+];
 
 @NgModule({
-  declarations: [SignupPageComponent, LoginPageComponent, ProfilePageComponent],
+  declarations: [
+    SignupPageComponent,
+    LoginPageComponent,
+    ProfilePageComponent,
+    ProfileDeletePageComponent,
+  ],
   imports: [
     ReactiveFormsModule,
     FormsModule,
@@ -18,7 +41,8 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
     MatFormFieldModule,
     TranslateModule,
     SharedModule,
-    RouterModule,
+    RouterModule.forChild(routes),
   ],
+  exports: [RouterModule],
 })
-export default class AuthModule {}
+export class AuthModule {}

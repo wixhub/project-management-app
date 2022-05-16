@@ -23,12 +23,12 @@
         </a>
       </li>
       <li>
-        <a routerLink="/profile">
+        <a routerLink="/auth/profile">
           <mat-icon> account_circle</mat-icon>
           {{ "Profile" | translate }}
         </a>
       </li>
-      <li *ngIf="currentPageUrl == '/profile'">
+      <li *ngIf="currentPageUrl == '/auth/profile'">
         <button mat-raised-button color="accent" (click)="deleteUser()">
           {{ "Delete-profile" | translate }}
         </button>
@@ -45,7 +45,7 @@
     </ng-container>
     <ng-template #login>
       <li>
-        <a routerLink="/login">
+        <a routerLink="/auth/login">
           <mat-icon> login</mat-icon>
           {{ "Login" | translate }}
         </a>

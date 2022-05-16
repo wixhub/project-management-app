@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
 import { ContainerComponent } from './core/components/container/container.component';
-import { SignupPageComponent } from './auth/pages/signup-page/signup-page.component';
-import { LoginPageComponent } from './auth/pages/login-page/login-page.component';
-import { ProfilePageComponent } from './auth/pages/profile-page/profile-page.component';
-import { AuthGuard } from './auth/guards/auth.guard';
 import { StartPageComponent } from './core/pages/start-page/start-page.component';
 
 const routes: Routes = [
@@ -24,17 +20,9 @@ const routes: Routes = [
           import('./main/main.module').then((m) => m.MainModule),
       },
       {
-        path: 'login',
-        component: LoginPageComponent,
-      },
-      {
-        path: 'signup',
-        component: SignupPageComponent,
-      },
-      {
-        path: 'profile',
-        component: ProfilePageComponent,
-        canActivate: [AuthGuard],
+        path: 'auth',
+        loadChildren: () =>
+          import('./auth/auth.module').then((m) => m.AuthModule),
       },
       { path: '**', component: ErrorPageComponent },
     ],
