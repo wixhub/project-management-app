@@ -94,6 +94,4 @@ export class ProfilePageComponent implements OnInit {
   haveValidationErrors(): boolean {
     return !(this.login?.errors === null && this.password?.errors === null);
   }
-
-  delete() {}
 }
