@@ -28,11 +28,6 @@
           {{ "Profile" | translate }}
         </a>
       </li>
-      <li *ngIf="currentPageUrl == '/auth/profile'">
-        <button mat-raised-button color="accent" (click)="deleteUser()">
-          {{ "Delete-profile" | translate }}
-        </button>
-      </li>
     </ng-container>
     <app-language-switcher></app-language-switcher>
     <ng-container *ngIf="isLogged">
