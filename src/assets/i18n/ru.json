@@ -1,12 +1,17 @@
 {
   "AddBoard": "Добавить список",
   "AddColumn": "Добавить колонку",
+  "AddTask": "Добавить задачу",
   "BoardPage": "Список",
   "Cancel": "Отменить",
   "Copyright": "Все права защищены. Копирование запрещено.",
   "Delete": "Удалить",
+  "Delete-board": "Вы хотите удалить этот проект?",
+  "Delete-title": "Удаление проекта",
   "Delete-profile": "Удалить профиль",
   "Delete-profile-question": "Вы действительно хотите удалить этот профиль? Это действие не может быть отменено",
+
+  "EditTask": "Редактировать задачу",
   "Email": "Email адрес",
   "Email-required": "Email обязателен",
   "Error": "Ошибка",
@@ -27,6 +32,7 @@
   "MainPage": "Список",
 
   "Name": "Имя",
+  "NewBoardPage": "Создание проекта",
 
   "Password": "Пароль",
   "Password-new": "Новый пароль",
@@ -78,5 +84,12 @@
   "startPage__card-description": "Карточки - это ваше средство для более организованной работы, где каждая часть вашей задачи управляется, отслеживается и доступна участникам вашей команды.",
 
   "board__create-board_name": "Название проекта",
-  "board__create-board": "Создать проект"
+  "board__create-board": "Создать проект",
+  "board__create-board_description": "Описание проекта",
+
+  "board__title-column": "Заголовок колонки",
+
+  "board__title-card": "Заголовок задачи",
+  "task__title-column": "Заголовок",
+  "task__description-column": "Описание"
 }

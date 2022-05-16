@@ -15,7 +15,6 @@ export class ContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.messageService.messageObservable$.subscribe((message) => {
-      console.log(message);
       this.messageText = message;
       this.isModalVisible = true;
     });
