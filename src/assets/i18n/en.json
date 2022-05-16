@@ -1,11 +1,16 @@
 {
   "AddBoard": "Add new board",
   "AddColumn": "Add new column",
+  "AddTask": "Add new task",
   "BoardPage": "Board edit",
   "Cancel": "Cancel",
   "Copyright": "All Right Reserved",
   "Delete": "Delete",
+  "Delete-board": "Do you want to delete this board?",
+  "Delete-title": "Board Delete Message",
   "Delete-profile": "Delete profile",
+
+  "EditTask": "Edit task",
   "Email": "Email address",
   "Email-required": "Email is required",
   "Error": "Error",
@@ -26,6 +31,7 @@
   "MainPage": "Boards list",
 
   "Name": "Name",
+  "NewBoardPage": "New Board",
 
   "Password": "Password",
   "Password-new": "New password",
@@ -77,5 +83,12 @@
   "startPage__card-description": "Cards are your portal to more organized work—where every single part of your task can be managed, tracked, and shared with teammates.",
 
   "board__create-board_name": "New board name",
-  "board__create-board": "Create board"
+  "board__create-board": "Create board",
+  "board__create-board_description": "Board description",
+
+  "board__title-column": "Column title",
+
+  "board__title-card": "Task title",
+  "task__title-column": "Title",
+  "task__description-column": "Description"
 }

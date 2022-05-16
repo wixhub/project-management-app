@@ -1,7 +1,15 @@
-import { IColumn, ITask } from './../../../api/models/APISchemas';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { IBoard, IColumn, ITask } from './../../../api/models/APISchemas';
 import { DatabaseService } from './../../../api/services/database/database.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
+import { CreateColumnDialogComponent } from '../create-column-dialog/create-column-dialog.component';
+import { TColumnInfo } from '../../../api/models/APISchemas';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-board-view',
@@ -11,19 +19,84 @@ import { map, Observable } from 'rxjs';
 export class BoardViewComponent implements OnInit {
   @Input() boardId!: string;
   public boardColumnArr$!: Observable<IColumn[]>;
-  constructor(private databaseService: DatabaseService) {}
+  listData!: IColumn[];
+  boardName!: string;
+  columnsCount: number = 0;
+
+  constructor(
+    private databaseService: DatabaseService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
+    this.databaseService
+      .getBoards()
+      .subscribe((data: any) => (this.boardName = this.getBoardName(data)));
+    this.getList();
+  }
+
+  getList() {
     this.boardColumnArr$ = this.databaseService.getColumns(this.boardId).pipe(
       map((data) => {
         if (Array.isArray(data)) {
+          this.listData = data;
+          this.columnsCount = data.length;
           return data;
         }
         return [];
       })
     );
   }
+
+  getBoardName(data: IBoard[]) {
+    let index = data.findIndex((obj) => obj.id === this.boardId);
+    return data[index].title;
+  }
+
   onClickCreateColumn() {
-    // open modal
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    dialogConfig.data = {
+      dialogTitle: 'AddColumn',
+    };
+
+    const dialogRef = this.dialog.open(
+      CreateColumnDialogComponent,
+      dialogConfig
+    );
+
+    dialogRef.afterClosed().subscribe((data) => {
+      const newColumn: TColumnInfo = {
+        title: data,
+        order: this.columnsCount + 1,
+      };
+      this.databaseService
+        .createColumn(this.boardId, newColumn)
+        .subscribe(() => this.getList());
+    });
+  }
+
+  drop(event: CdkDragDrop<IColumn[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
+  }
+
+  deleteItem() {
+    this.getList();
   }
 }

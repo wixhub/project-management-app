@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidenavListComponent } from './components/sidenav-list/sidenav-list.component';
 import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component';
 import { MessageModalComponent } from './components/message-modal/message-modal.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 const routes: Routes = [];
 
@@ -23,6 +24,7 @@ const routes: Routes = [];
     SidenavListComponent,
     LanguageSwitcherComponent,
     MessageModalComponent,
+    ConfirmDialogComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   exports: [RouterModule, HeaderComponent],
