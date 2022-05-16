@@ -25,6 +25,11 @@ const routes: Routes = [
     component: ProfilePageComponent,
     canActivate: [AuthGuard],
   },
+  {
+    path: 'profile/delete',
+    component: ProfileDeletePageComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
