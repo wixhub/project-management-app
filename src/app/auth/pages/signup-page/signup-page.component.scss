@@ -6,7 +6,7 @@
   align-items: center;
 }
 .form__question {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .form__link {
@@ -14,23 +14,23 @@
 }
 
 .form__container {
+  width: 320px;
   border: none;
   border-radius: 5px;
   background-color: #ccc;
-  padding: 20px 40px;
-  margin: 8px;
+  padding: 20px 20px;
 }
 
 .form__input {
   height: 40px;
-  width: 300px;
+  width: 280px;
   margin-bottom: 10px;
 }
 
 .form__input-title {
   display: block;
   color: gray;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: normal;
   margin: 0 0 5px;
 }
@@ -43,7 +43,7 @@
   height: 30px;
   border: none;
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   background-color: $color-primary;
   &:disabled {
@@ -76,7 +76,7 @@
 
 .validation-error {
   margin: 0.5rem 0 0;
-  font-size: 13px;
+  font-size: 14px;
   &__indented {
     text-indent: 1rem;
     &::before {

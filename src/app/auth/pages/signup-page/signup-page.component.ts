@@ -64,7 +64,7 @@ export class SignupPageComponent {
       login: this.login?.value,
       password: this.password?.value,
     });
-    this.router.navigate(['/login']).then();
+    this.router.navigate(['/auth/login']).then();
   }
 
   get name(): AbstractControl | null {

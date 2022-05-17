@@ -9,6 +9,7 @@
   "Delete-board": "Do you want to delete this board?",
   "Delete-title": "Board Delete Message",
   "Delete-profile": "Delete profile",
+  "Delete-profile-question": "Are you sure you want to delete this profile? This action cannot be undone",
 
   "EditTask": "Edit task",
   "Email": "Email address",

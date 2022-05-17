@@ -1,0 +1,8 @@
+@import "src/app/auth/pages/profile-page/profile-page.component";
+
+.btn-delete {
+  background-color: $color-danger;
+  &:hover {
+    background-color: $color-danger-hover;
+  }
+}

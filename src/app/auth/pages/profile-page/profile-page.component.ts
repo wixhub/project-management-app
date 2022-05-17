@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -8,13 +8,14 @@ import {
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication/authentication.service';
 import { RegexValidationService } from '../../services/regex-validation/regex-validation.service';
+import { TitleService } from '../../../core/services/title.service';
 
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
   styleUrls: ['./profile-page.component.scss'],
 })
-export class ProfilePageComponent {
+export class ProfilePageComponent implements OnInit {
   loginForm: FormGroup;
 
   emailPattern: string;
@@ -28,7 +29,8 @@ export class ProfilePageComponent {
   constructor(
     private router: Router,
     private auth: AuthenticationService,
-    private regexVal: RegexValidationService
+    private regexVal: RegexValidationService,
+    private title: TitleService
   ) {
     this.emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
     this.lowerUpperCasePattern = '(?=.*[a-z])(?=.*[A-Z])';
@@ -63,6 +65,11 @@ export class ProfilePageComponent {
     this.login?.setValue(this.auth.userLogin);
   }
 
+  ngOnInit(): void {
+    this.title.setTitle('Profile');
+    this.title.setHeaderTitle('Profile');
+  }
+
   update(): void {
     this.auth.update(this.auth.userId, {
       name: this.name?.value,
@@ -87,6 +94,4 @@ export class ProfilePageComponent {
   haveValidationErrors(): boolean {
     return !(this.login?.errors === null && this.password?.errors === null);
   }
-
-  delete() {}
 }
