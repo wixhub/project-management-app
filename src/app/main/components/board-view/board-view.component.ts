@@ -69,13 +69,15 @@ export class BoardViewComponent implements OnInit {
     );
 
     dialogRef.afterClosed().subscribe((data) => {
-      const newColumn: TColumnInfo = {
-        title: data,
-        order: this.columnsCount + 1,
-      };
-      this.databaseService
-        .createColumn(this.boardId, newColumn)
-        .subscribe(() => this.getList());
+      if (data) {
+        const newColumn: TColumnInfo = {
+          title: data,
+          order: this.columnsCount + 1,
+        };
+        this.databaseService
+          .createColumn(this.boardId, newColumn)
+          .subscribe(() => this.getList());
+      }
     });
   }
 

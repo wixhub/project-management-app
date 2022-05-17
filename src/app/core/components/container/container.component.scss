@@ -14,9 +14,19 @@ mat-sidenav {
   flex: 1;
 }
 
+app-header {
+  background: #fff;
+  box-shadow: 0 3px 12px 0 rgba(0,0,0,.08);
+  position: fixed;
+  top: 0;
+  height: 64px;
+  width: 100%;
+}
+
 main {
   display: flex;
   flex-grow: 1;
   align-items: center;
   justify-content: center;
+  margin-top: 64px;
 }
