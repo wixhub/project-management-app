@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
 import { DatabaseService } from '../../../api/services/database/database.service';
 import { map, mergeMap, reduce, switchMap } from 'rxjs/operators';
-import { IBoard, IBoardComplete, IError } from '../../../api/models/APISchemas';
+import {
+  IBoard,
+  IBoardComplete,
+  IColumnComplete,
+  IError,
+  ITask,
+} from '../../../api/models/APISchemas';
 import { from, Observable } from 'rxjs';
 
 @Injectable({
@@ -34,4 +40,30 @@ export class SearchService {
       )
     );
   }
+
+  searchInBoards(key: string, data: IBoardComplete[]): ISearchResults[] {
+    const results: ISearchResults[] = [];
+    data.forEach((board: IBoardComplete) => {
+      board.columns?.forEach((column: IColumnComplete) => {
+        column.tasks?.forEach((task: ITask) => {
+          if (task.title.includes(key) || task.description.includes(key)) {
+            results.push({
+              boardId: board.id,
+              boardName: board.title,
+              columnName: column.title,
+              taskName: task.title,
+            });
+          }
+        });
+      });
+    });
+    return results;
+  }
+}
+
+interface ISearchResults {
+  boardId: string;
+  boardName: string;
+  columnName: string;
+  taskName: string;
 }
