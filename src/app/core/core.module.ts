@@ -11,6 +11,7 @@ import { SidenavListComponent } from './components/sidenav-list/sidenav-list.com
 import { LanguageSwitcherComponent } from './components/language-switcher/language-switcher.component';
 import { MessageModalComponent } from './components/message-modal/message-modal.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 const routes: Routes = [];
 
@@ -25,6 +26,7 @@ const routes: Routes = [];
     LanguageSwitcherComponent,
     MessageModalComponent,
     ConfirmDialogComponent,
+    SearchInputComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   exports: [RouterModule, HeaderComponent],
