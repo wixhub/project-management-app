@@ -1,6 +1,6 @@
 <form class='form__container' [formGroup]='loginForm' (ngSubmit)="signin()">
   <h3 class='form__title'>{{ "LoginPage" | translate }}</h3>
-  <p class='form__question'>{{ "Signup-question" | translate }}<a class="form__link" routerLink="/signup"
+  <p class='form__question'>{{ "Signup-question" | translate }}<a class="form__link" routerLink="/auth/signup"
   >{{ "Signup-welcome" | translate }}</a></p>
 
   <label for="login" class='form__input-title'>{{ "Login-name" | translate }}</label>

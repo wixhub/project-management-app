@@ -82,9 +82,16 @@
       {{ "Validation-password-special" | translate }}
     </p>
   </div>
-  <button
-    class='form__submit'
-    type="submit"
-    [disabled]='haveValidationErrors()'>{{ "Update" | translate }}
-  </button>
+  <div class="buttons-container">
+    <a class="button__link" routerLink="/auth/profile/delete">
+      <button
+        class='form__submit'>{{ "Delete" | translate }}
+      </button>
+    </a>
+    <button
+      class='form__submit'
+      type="submit"
+      [disabled]='haveValidationErrors()'>{{ "Update" | translate }}
+    </button>
+  </div>
 </form>

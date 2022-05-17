@@ -1,1 +1,13 @@
 @import "src/app/auth/pages/signup-page/signup-page.component";
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__submit {
+  margin-left: 0;
+}
+
+.button__link {
+  color: inherit;
+}
