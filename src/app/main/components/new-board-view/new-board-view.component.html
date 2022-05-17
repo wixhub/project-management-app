@@ -3,15 +3,15 @@
   [formGroup]="newBoardForm"
   (ngSubmit)="createBoard()"
 >
-  <label class="board__name-label" for="new-board__name">{{
+  <label class="board__label" for="new-board__name">{{
     "board__create-board_name" | translate
   }}</label>
-  <input class="board__name-input" formControlName="boardName" />
-  <label class="board__description-label" for="new-board__description">{{
+  <input class="board__input" formControlName="boardName" />
+  <label class="board__label" for="new-board__description">{{
     "board__create-board_description" | translate
   }}</label>
   <textarea
-    class="board__name-input"
+    class="board__input"
     formControlName="boardDescription"
   ></textarea>
   <button type="submit" class="board__btn">

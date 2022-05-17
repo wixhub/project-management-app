@@ -2,7 +2,7 @@
 
   &__default,
   &__content {
-    margin-top: 3vh;
+    margin-top: 5vh;
     font-size: 1.6rem;
   }
 
@@ -27,10 +27,15 @@
 
   &__list {
     list-style: none;
-    display: flex;
-    flex-direction: column;
+
+    max-height: 50vh;
+    height: fit-content;
     padding: 0;
     margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
   }
 
   &__item {
