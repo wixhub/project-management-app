@@ -1,5 +1,6 @@
 :host {
   display: flex;
+  flex-direction: row;
 }
 
 .main-page {
@@ -22,17 +23,5 @@
   &__item-name {
     letter-spacing: 1px;
     font-weight: 500;
-  }
-
-  &__item-del {
-    margin-top: .3rem;
-    margin-left: .3rem;
-
-    transition: all .25s;
-
-    &:hover {
-      cursor: pointer;
-      color: #FF2E63;
-    }
   }
 }

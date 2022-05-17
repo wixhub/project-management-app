@@ -1,9 +1,6 @@
 <div class="board board__container">
-  <h3 class="board__header">
-    {{ "mainPage__board-item" | translate }}
-    <span class="board__header-name">{{ boardName }}</span>
-  </h3>
-  <div class="board__create-column" (click)="onClickCreateColumn()">
+  <h3>{{ boardName }}</h3>
+  <div class="board__create-col" (click)="onClickCreateColumn()">
     + {{ "AddColumn" | translate }}
   </div>
   <ul cdkDropListGroup *ngIf="boardColumnArr$ | async; let columns">
