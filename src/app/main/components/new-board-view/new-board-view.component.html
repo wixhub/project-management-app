@@ -1,20 +1,22 @@
-<form
-  class="board board__form"
-  [formGroup]="newBoardForm"
-  (ngSubmit)="createBoard()"
->
-  <label class="board__label" for="new-board__name">{{
-    "board__create-board_name" | translate
-  }}</label>
-  <input class="board__input" formControlName="boardName" />
-  <label class="board__label" for="new-board__description">{{
-    "board__create-board_description" | translate
-  }}</label>
-  <textarea
-    class="board__input"
-    formControlName="boardDescription"
-  ></textarea>
-  <button type="submit" class="board__btn">
-    {{ "board__create-board" | translate }}
-  </button>
-</form>
+<div class="board__wrapper">
+  <form
+    class="board__form"
+    [formGroup]="newBoardForm"
+    (ngSubmit)="createBoard()"
+  >
+    <label class="board__label" for="new-board__name">{{
+      "board__create-board_name" | translate
+    }}</label>
+    <input class="board__input" formControlName="boardName" />
+    <label class="board__label" for="new-board__description">{{
+      "board__create-board_description" | translate
+    }}</label>
+    <textarea
+      class="board__input"
+      formControlName="boardDescription"
+    ></textarea>
+    <button type="submit" class="board__btn">
+      {{ "board__create-board" | translate }}
+    </button>
+  </form>
+</div>
