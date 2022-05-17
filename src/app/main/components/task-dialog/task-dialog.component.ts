@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -25,13 +25,15 @@ export class TaskDialogComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      title: [this.formTitle, []],
-      description: [this.formDescription, []],
+      title: [this.formTitle, [Validators.required]],
+      description: [this.formDescription, [Validators.required]],
     });
   }
 
   save() {
-    this.dialogRef.close(this.form.value);
+    if (this.form.valid) {
+      this.dialogRef.close(this.form.value);
+    }
   }
 
   close() {
