@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: ContainerComponent,
     children: [
-      { path: '', redirectTo: 'start', pathMatch: 'full' },
+      { path: '', redirectTo: 'main', pathMatch: 'full' },
       {
         path: 'start',
         component: StartPageComponent,
