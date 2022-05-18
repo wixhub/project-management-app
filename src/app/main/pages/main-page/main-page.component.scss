@@ -1,8 +1,20 @@
 .main-page {
+  &__wrapper {
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    padding: 0 3vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 0 20vw 7vw #212121;
+  }
 
   &__default,
   &__content {
-    margin-top: 3vh;
+    margin-top: 5vh;
     font-size: 1.6rem;
   }
 
@@ -27,10 +39,18 @@
 
   &__list {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
+
+    display: grid;
+    grid-row-gap: 1.5vh;
+
+    max-height: 50vh;
+    overflow-y: auto;
+    height: fit-content;
+    padding: 2vh 1vw;
     margin: 0;
+
+    border: 1px dashed #212121;
+    border-radius: 5px;
   }
 
   &__item {
@@ -48,12 +68,14 @@
   }
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 :host {
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #BBE1FA;
   color: #212121;
 }
