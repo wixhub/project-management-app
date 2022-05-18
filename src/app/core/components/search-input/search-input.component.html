@@ -1,5 +1,14 @@
-<input
-  type='search'
-  placeholder='Search in tasks'
-  class='search__input'
-  #searchInput>
+<div class="search__container">
+  <input
+    type='search'
+    placeholder='Search in tasks'
+    class='search__input'
+    (focus)="onFocus()"
+    (blur)="onBlur()"
+    (search)="onSearch()"
+    #searchInput>
+  <div (pointerover)="onHover()" (pointerleave)="onLeave()" class="search__results" *ngIf="isFocused || isHovered">
+    <app-result-item [result]="result" *ngFor="let result of results"></app-result-item>
+  </div>
+</div>
+
