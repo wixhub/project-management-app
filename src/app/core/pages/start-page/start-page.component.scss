@@ -55,6 +55,11 @@
     width: 50%;
   }
 
+  &__img-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
   &__img {
     max-height: 15rem;
     padding: 1vh 1vw;
