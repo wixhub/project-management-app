@@ -1,6 +1,7 @@
 :host {
   display: flex;
   flex-flow: row;
+  width: 90vw;
 }
 
 ul {
@@ -20,8 +21,8 @@ mat-toolbar {
 }
 
 @media(max-width: 959px) {
-  mat-toolbar{
-      border-radius: 0px;
+  mat-toolbar {
+    border-radius: 0px;
   }
 }
 
