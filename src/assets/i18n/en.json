@@ -97,8 +97,13 @@
   "board__create-board_description": "Board description",
 
   "board__title-column": "Column title",
+  "column__delete-title": "Column Delete Message",
+  "column__delete-message": "Do you want to delete this column?",
 
   "board__title-card": "Task title",
   "task__title-column": "Title",
-  "task__description-column": "Description"
+  "task__description-column": "Description",
+  "task__delete-title": "Task Delete Message",
+  "task__delete-message": "Do you want to delete this task?"
+
 }

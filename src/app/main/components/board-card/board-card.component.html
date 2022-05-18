@@ -1,6 +1,8 @@
-<li class="board-page__item" (click)="editCard()">
-  <span class="board-page__item-descr"
-    >{{ "board__title-card" | translate }}: </span
-  ><span class="board-page__item-name">{{ card.title }}</span>
+<li class="board-page__item">
+  <div (click)="editCard()">
+    <span class="board-page__item-descr"
+      >{{ "board__title-card" | translate }}: </span
+    ><span class="board-page__item-name">{{ card.title }}</span>
+  </div>
   <mat-icon (click)="deleteCard()">delete</mat-icon>
 </li>
