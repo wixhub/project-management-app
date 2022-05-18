@@ -1,6 +1,7 @@
 :host {
   display: flex;
   flex-flow: row;
+  justify-content: flex-end;
   width: 100%;
   background-color: #212121;
 }
@@ -16,7 +17,12 @@ li {
   margin: 0 2px 0 6px;
 }
 
+h3 {
+  font-size: 1.4rem;
+}
+
 a {
+  font-size: 1.2rem;
   border: 1px solid #9DF3C4;
   padding: 3px 6px;
   border-radius: 3px;
@@ -62,7 +68,33 @@ img {
     }
   }
 
-  &__title{
-    margin-left: 13vw;
+  &__title {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    margin-left: 10vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    &__title {
+      justify-content: flex-end;
+      margin-left: 0;
+      margin-right: 2vw;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .header {
+    &__title {
+      justify-content: center;
+      margin-right: 0;
+    }
   }
 }

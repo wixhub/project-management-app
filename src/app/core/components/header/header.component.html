@@ -9,7 +9,7 @@
     alt="Rolling Scope School"
     routerLink="/start"
   />
-  <div class="header__title" fxFlex fxLayout fxLayoutAlign="center" *ngIf="isLogged; else full">
+  <div class="header__title"  *ngIf="isLogged; else full">
     <h3>{{ title | translate }}</h3>
   </div>
   <ng-template #full>

@@ -69,7 +69,8 @@
     &_left {
       margin-left: 1vw;
     }
-    &_small{
+
+    &_small {
       width: 12vw;
     }
   }
@@ -139,6 +140,7 @@
 
   &__team {
     margin: 0;
+    padding: 0;
     list-style: none;
     display: grid;
     justify-items: center;
@@ -189,3 +191,29 @@
   background-color: #BBE1FA;
   color: #212121;
 }
+
+@media (max-width:1250px) {
+  .start-page {
+    &__section {
+      width: 80vw;
+    }
+  }
+}
+
+@media (max-width:1150px) {
+  .start-page {
+    &__section {
+      width: 100vw;
+    }
+  }
+}
+
+@media (max-width:900px) {
+  .start-page {
+    &__section {
+      flex-direction: column;
+    }
+  }
+}
+
+// @media (max-width:1250px) {}
