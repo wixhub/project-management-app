@@ -190,6 +190,7 @@
   justify-content: center;
   background-color: #BBE1FA;
   color: #212121;
+  overflow: hidden;
 }
 
 @media (max-width:1250px) {
@@ -202,6 +203,11 @@
 
 @media (max-width:1150px) {
   .start-page {
+    &__wrapper {
+      padding: 0;
+      box-shadow: none;
+    }
+
     &__section {
       width: 100vw;
     }
@@ -210,8 +216,61 @@
 
 @media (max-width:900px) {
   .start-page {
+
+    &__about-course {
+      width: 85vw;
+    }
+
     &__section {
       flex-direction: column;
+    }
+
+    &__text-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+    }
+
+    &__img {
+      max-height: 15rem;
+
+      &-wrapper {
+        margin-bottom: 2vh;
+      }
+
+      &_right {
+        margin-right: 0;
+        margin-bottom: 2vh;
+      }
+
+      &_left {
+        margin-top: 2vh;
+        margin-left: 0;
+      }
+
+      &_small {
+        width: 30vw;
+        margin-bottom: 0;
+      }
+    }
+
+    &__team {
+      justify-items: center;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-row-gap: 3vh;
+    }
+
+    &__member {
+      width: 80%;
+      display: grid;
+      justify-items: center;
+
+      &:first-of-type {
+        width: 80%;
+        grid-column: span 1;
+      }
+
     }
   }
 }
