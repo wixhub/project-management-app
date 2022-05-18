@@ -1,0 +1,10 @@
+<div class="result__item">
+  <div class="result__column column-one">
+    <a class="result__link" [routerLink]="['/main', result.boardId]">{{ result.boardName }}</a>
+    <div class="result__text">{{ result.columnName }}</div>
+  </div>
+  <div class="result__column column-two">
+    <div class="result__text">{{ result.taskName }}</div>
+    <div class="result__text">{{ result.taskDesc }}</div>
+  </div>
+</div>

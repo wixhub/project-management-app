@@ -1,0 +1,18 @@
+.result__item {
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 5px 10px;
+}
+
+.result__link {
+  display: block;
+}
+
+.column-one {
+  flex-grow: 1;
+}
+
+.column-two {
+  flex-grow: 2;
+}

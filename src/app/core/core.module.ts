@@ -12,6 +12,7 @@ import { LanguageSwitcherComponent } from './components/language-switcher/langua
 import { MessageModalComponent } from './components/message-modal/message-modal.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
+import { ResultItemComponent } from './components/result-item/result-item.component';
 
 const routes: Routes = [];
 
@@ -27,6 +28,7 @@ const routes: Routes = [];
     MessageModalComponent,
     ConfirmDialogComponent,
     SearchInputComponent,
+    ResultItemComponent,
   ],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   exports: [RouterModule, HeaderComponent],
