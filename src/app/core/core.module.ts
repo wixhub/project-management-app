@@ -13,6 +13,7 @@ import { MessageModalComponent } from './components/message-modal/message-modal.
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { ResultItemComponent } from './components/result-item/result-item.component';
+import { SortResultsPipe } from './pipes/sort-results.pipe';
 
 const routes: Routes = [];
 
@@ -29,6 +30,7 @@ const routes: Routes = [];
     ConfirmDialogComponent,
     SearchInputComponent,
     ResultItemComponent,
+    SortResultsPipe,
   ],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
   exports: [RouterModule, HeaderComponent],

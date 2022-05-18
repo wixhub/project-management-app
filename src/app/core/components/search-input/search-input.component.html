@@ -8,7 +8,6 @@
     (search)="onSearch()"
     #searchInput>
   <div (pointerover)="onHover()" (pointerleave)="onLeave()" class="search__results" *ngIf="isFocused || isHovered">
-    <app-result-item [result]="result" *ngFor="let result of results"></app-result-item>
+    <app-result-item [result]="result" *ngFor="let result of results | sortResults"></app-result-item>
   </div>
 </div>
-
