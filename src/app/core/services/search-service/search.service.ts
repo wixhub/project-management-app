@@ -52,6 +52,7 @@ export class SearchService {
               boardName: board.title,
               columnName: column.title,
               taskName: task.title,
+              taskDesc: task.description,
             });
           }
         });
@@ -61,9 +62,10 @@ export class SearchService {
   }
 }
 
-interface ISearchResults {
+export interface ISearchResults {
   boardId: string;
   boardName: string;
   columnName: string;
   taskName: string;
+  taskDesc: string;
 }
