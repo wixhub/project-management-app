@@ -1,7 +1,8 @@
 :host {
   display: flex;
   flex-flow: row;
-  width: 90vw;
+  width: 100%;
+  background-color: #212121;
 }
 
 ul {
@@ -14,6 +15,22 @@ li {
   list-style-type: none;
   margin: 0 2px 0 6px;
 }
+
+a {
+  border: 1px solid #9DF3C4;
+  padding: 3px 6px;
+  border-radius: 3px;
+  color: darken(#9DF3C4, 10%);
+
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #9DF3C4;
+    color: darken(#BBE1FA, 30%);
+  }
+}
+
 
 mat-toolbar {
   display: flex;
@@ -28,4 +45,24 @@ mat-toolbar {
 
 img {
   width: 60px;
+}
+
+.header {
+  &__wrapper {
+    padding: 0 1.5vw;
+    color: darken(#9DF3C4, 10%);
+    background-color: inherit;
+  }
+
+  &__logo {
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__title{
+    margin-left: 13vw;
+  }
 }
