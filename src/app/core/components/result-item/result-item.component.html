@@ -1,10 +1,11 @@
 <div class="result__item">
   <div class="result__column column-one">
-    <a class="result__link" [routerLink]="['/main', result.boardId]">{{ result.boardName }}</a>
-    <div class="result__text">{{ result.columnName }}</div>
+    <a class="result__link"
+       (click)="goTo()">{{ result.boardName | slice:0:11 }}{{ result.boardName.length > 11 ? '...' : '' }}</a>
+    <div class="result__text">{{ result.columnName | slice:0:11 }}{{ result.columnName.length > 11 ? '...' : '' }}</div>
   </div>
   <div class="result__column column-two">
-    <div class="result__text">{{ result.taskName }}</div>
-    <div class="result__text">{{ result.taskDesc }}</div>
+    <div class="result__text">{{ result.taskName | slice:0:22 }}{{ result.taskName.length > 22 ? '...' : '' }}</div>
+    <div class="result__text">{{ result.taskDesc | slice:0:22 }}{{ result.taskDesc.length > 22 ? '...' : '' }}</div>
   </div>
 </div>

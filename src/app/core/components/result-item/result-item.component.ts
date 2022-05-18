@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ISearchResults } from '../../services/search-service/search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-result-item',
@@ -15,7 +16,13 @@ export class ResultItemComponent implements OnInit {
     taskDesc: '',
   };
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  goTo() {
+    this.router.navigate(['/main']).then(() => {
+      this.router.navigate([`/main/${this.result.boardId}`]).then();
+    });
+  }
 }

@@ -7,12 +7,13 @@
 
 .result__link {
   display: block;
+  cursor: pointer;
 }
 
 .column-one {
-  flex-grow: 1;
+  width: 120px;
 }
 
 .column-two {
-  flex-grow: 2;
+  width: 200px;
 }
