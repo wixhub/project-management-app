@@ -105,8 +105,8 @@ export class BoardColumnComponent implements OnInit {
 
   deleteColumn() {
     const dialogData = new ConfirmDialogModel(
-      'Delete-title',
-      `Delete-task`,
+      'column__delete-title',
+      'column__delete-message',
       'Delete'
     );
 

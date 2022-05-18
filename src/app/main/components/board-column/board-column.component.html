@@ -1,27 +1,29 @@
 <li class="board-page__item">
   <div class="board-page__config">
-    <span class="board-page__item-descr"
-      >{{ "board__title-column" | translate }}: </span
-    ><span class="board-page__item-name"
-      ><input
-        type="text"
-        class="board-page__item-input"
-        id="colTitle"
-        name="colTitle"
-        value="{{ columnTitle }}"
-        #colTitle
-        (click)="editTitle()"
-    /></span>
-    <button *ngIf="titleEditMode" mat-button (click)="onCancel()">
-      {{ "Cancel" | translate }}
-    </button>
-    <button
-      *ngIf="titleEditMode"
-      mat-raised-button
-      (click)="onSubmit(colTitle.value)"
-    >
-      {{ "Submit" | translate }}
-    </button>
+    <div>
+      <span class="board-page__item-descr"
+        >{{ "board__title-column" | translate }}: </span
+      ><span class="board-page__item-name"
+        ><input
+          type="text"
+          class="board-page__item-input"
+          id="colTitle"
+          name="colTitle"
+          value="{{ columnTitle }}"
+          #colTitle
+          (click)="editTitle()"
+      /></span>
+      <button *ngIf="titleEditMode" mat-button (click)="onCancel()">
+        {{ "Cancel" | translate }}
+      </button>
+      <button
+        *ngIf="titleEditMode"
+        mat-raised-button
+        (click)="onSubmit(colTitle.value)"
+      >
+        {{ "Submit" | translate }}
+      </button>
+    </div>
     <mat-icon (click)="deleteColumn()">delete</mat-icon>
     <mat-icon (click)="onClickCreateCard()">add</mat-icon>
   </div>

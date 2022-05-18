@@ -97,6 +97,8 @@
   "board__create-board_description": "Описание проекта",
 
   "board__title-column": "Заголовок колонки",
+  "column__delete-title": "Удаление колонки",
+  "column__delete-message": "Вы хотите удалить этоту колонку?",
 
   "board__title-card": "Заголовок задачи",
   "task__title-column": "Заголовок",
