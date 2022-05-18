@@ -102,5 +102,7 @@
 
   "board__title-card": "Заголовок задачи",
   "task__title-column": "Заголовок",
-  "task__description-column": "Описание"
+  "task__description-column": "Описание",
+  "task__delete-title": "Удаление задачи",
+  "task__delete-message": "Вы хотите удалить этоту задачу?"
 }
