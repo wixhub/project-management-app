@@ -4,9 +4,18 @@
   align-items: center;
   color: #212121;
 
-  form, mat-dialog-content, mat-form-field {
+  form,
+  mat-dialog-content,
+  mat-form-field {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+
+.form {
+  &__btn-wrapper {
+    display: flex;
+    justify-content: space-evenly;
   }
 }

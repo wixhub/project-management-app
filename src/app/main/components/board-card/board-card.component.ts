@@ -64,8 +64,8 @@ export class BoardCardComponent implements OnInit {
 
   deleteCard() {
     const dialogData = new ConfirmDialogModel(
-      'Delete-title',
-      `Delete-board`,
+      'task__delete-title',
+      'task__delete-message',
       'Delete'
     );
 
