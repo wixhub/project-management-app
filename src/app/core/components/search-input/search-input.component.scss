@@ -1,0 +1,22 @@
+@import "src/styles";
+
+.search__container {
+  position: relative;
+}
+
+.search__input {
+  min-width: 320px;
+  width: 50%;
+  height: 24px;
+  box-sizing: border-box;
+}
+
+.search__results {
+  min-width: 320px;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  min-height: 50px;
+  background-color: $color-background-gray;
+}

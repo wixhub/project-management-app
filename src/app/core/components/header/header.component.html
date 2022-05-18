@@ -13,6 +13,9 @@
   </ng-template>
   <ul fxLayoutAlign="end" fxHide.xs>
     <ng-container *ngIf="isLogged; else login">
+      <li>
+        <app-search-input></app-search-input>
+      </li>
       <li *ngIf="currentPageUrl != '/main'">
         <a routerLink="/main">{{ "MainPage" | translate }}</a>
       </li>
