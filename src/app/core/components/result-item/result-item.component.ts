@@ -12,8 +12,7 @@ export class ResultItemComponent implements OnInit {
     boardId: '',
     boardName: '',
     columnName: '',
-    taskName: '',
-    taskDesc: '',
+    found: '',
   };
 
   constructor(private router: Router) {}
