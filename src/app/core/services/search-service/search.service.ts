@@ -46,7 +46,10 @@ export class SearchService {
     data.forEach((board: IBoardComplete) => {
       board.columns?.forEach((column: IColumnComplete) => {
         column.tasks?.forEach((task: ITask) => {
-          if (task.title.includes(key) || task.description.includes(key)) {
+          if (
+            key &&
+            (task.title.includes(key) || task.description.includes(key))
+          ) {
             results.push({
               boardId: board.id,
               boardName: board.title,

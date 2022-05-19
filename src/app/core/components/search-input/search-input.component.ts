@@ -3,15 +3,7 @@ import {
   ISearchResults,
   SearchService,
 } from '../../services/search-service/search.service';
-import {
-  debounceTime,
-  filter,
-  fromEvent,
-  map,
-  merge,
-  combineLatestWith,
-  tap,
-} from 'rxjs';
+import { debounceTime, fromEvent, map, combineLatestWith } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { IBoardComplete } from '../../../api/models/APISchemas';
 
@@ -43,29 +35,19 @@ export class SearchInputComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const inputEvent$ = fromEvent<KeyboardEvent>(
-      this.searchInput.nativeElement,
-      'input'
-    ).pipe(debounceTime(1500));
-    const enterEvent$ = fromEvent<KeyboardEvent>(
-      this.searchInput.nativeElement,
-      'keyup'
-    ).pipe(filter((event: KeyboardEvent) => event.code === 'Enter'));
     const data$ = fromEvent(this.searchInput.nativeElement, 'beforeinput').pipe(
       debounceTime(1000),
-      tap(() => {
-        if (this.searchInput.nativeElement.value.length < 3) {
-          this.results = [this.defaultValue];
-        }
-      }),
       switchMap(() => {
         return this.search.getCompleteBoardsData();
       })
     );
-    merge(inputEvent$, enterEvent$)
+    fromEvent<KeyboardEvent>(this.searchInput.nativeElement, 'keyup')
       .pipe(
+        debounceTime(1500),
         map<KeyboardEvent, string>(() => this.searchInput.nativeElement.value),
-        filter<string>((searchValue: string) => searchValue.length >= 3),
+        map<string, string>((searchValue: string) =>
+          searchValue.length >= 3 ? searchValue : ''
+        ),
         combineLatestWith<string, [IBoardComplete[]]>(data$),
         map<[string, IBoardComplete[]], ISearchResults[]>(
           ([searchValue, data]) => this.search.searchInBoards(searchValue, data)
