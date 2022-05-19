@@ -2,7 +2,7 @@
   <div *ngIf="boardList$ | async; let items">
     <ng-container *ngIf="items.length > 0; else noData">
       <h2 class="main-page__content">{{ "mainPage__content" | translate }}</h2>
-      <ul cdkDropListGroup>
+      <ul>
         <div
           class="main-page__list"
           cdkDropList
@@ -10,9 +10,11 @@
           (cdkDropListDropped)="drop($event)"
         >
           <app-board-item
+            cdkDropListGroup
             cdkDrag
             *ngFor="let item of items"
             [item]="item"
+            [cdkDragData]="item"
             (removed)="deleteItem()"
           ></app-board-item>
         </div>
