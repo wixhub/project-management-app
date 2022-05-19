@@ -28,8 +28,7 @@ export class SearchInputComponent implements AfterViewInit {
       boardId: '',
       boardName: '',
       columnName: '',
-      taskName: 'No data found',
-      taskDesc: '',
+      found: 'No data found',
     };
     this.results = [this.defaultValue];
   }
