@@ -5,18 +5,28 @@
 }
 
 .search__input {
-  min-width: 320px;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  outline: none;
+  min-width: 280px;
   width: 50%;
   height: 24px;
   box-sizing: border-box;
+
+  &:focus {
+    border: 2px solid #9DF3C4;
+  }
 }
 
 .search__results {
-  min-width: 320px;
+  min-width: 280px;
   width: 50%;
   position: absolute;
   bottom: 0;
   transform: translateY(100%);
   min-height: 50px;
-  background-color: $color-background-gray;
+  border: 1px solid #9DF3C4;
+  background-color: #212121;
+  max-height: 40vh;
+  overflow-y: auto;
 }

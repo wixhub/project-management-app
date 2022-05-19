@@ -7,7 +7,13 @@
 
 .result__link {
   display: block;
-  cursor: pointer;
+  color: #BBE1FA;
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    color: #FF2E63;
+  }
 }
 
 .column-one {
