@@ -77,3 +77,12 @@
   background-color: #BBE1FA;
   color: #212121;
 }
+
+@media (max-width: 600px) {
+  .board {
+    &__wrapper {
+      width: 100%;
+      padding: 0 3vw;
+    }
+  }
+}

@@ -3,19 +3,20 @@
 }
 
 select {
-  background-color: #f5f5f5;
+  background-color: #212121;
+  color: #9DF3C4;
   letter-spacing: .15em;
-  border-radius: 10;
+  border-radius: 5px;
   margin: 0 5px 0 5px;
   padding: 0 2px 0 5px;
-  border: 0;
+  border: 1px solid #9DF3C4;
   cursor: pointer;
   &:focus, &:active {
     outline: 0;
   }
 
   option {
-    background-color: #f5f5f5;
+    background-color: #212121;
     letter-spacing: .15em;
     border: 0;
   }

@@ -1,16 +1,16 @@
-<mat-toolbar>
+<mat-toolbar class="header__wrapper">
   <div fxHide.gt-xs>
     <button mat-icon-button (click)="onToggleSidenav()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <a routerLink="/start">
-    <img
-      src="../../../../assets/images/logo-rs.svg"
-      alt="Rolling Scope School"
-    />
-  </a>
-  <div fxFlex fxLayout fxLayoutAlign="center" *ngIf="isLogged; else full">
+  <img
+    class="header__logo"
+    src="../../../../assets/images/logo-rs.svg"
+    alt="Rolling Scope School"
+    routerLink="/start"
+  />
+  <div class="header__title" *ngIf="isLogged; else full">
     <h3>{{ title | translate }}</h3>
   </div>
   <ng-template #full>

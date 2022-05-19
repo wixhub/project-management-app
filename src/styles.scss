@@ -70,3 +70,15 @@ $color-disabled: #999;
 $color-background-gray: #CCC;
 $color-danger: #DC3545;
 $color-danger-hover: #D77780;
+
+@media(max-width: 1020px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media(max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+}
