@@ -12,7 +12,7 @@
   &__message {
     text-align: center;
     width: 50%;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     letter-spacing: 1.3px;
     line-height: 1.2;
   }
@@ -28,4 +28,20 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+
+@media (max-width: 700px) {
+  .error-page {
+    &__title {
+      width: 80%;
+      font-size: 3rem;
+      margin: 15vh 0 5vh 0;
+    }
+
+    &__message {
+      width: 80%;
+      font-size: 1.5rem;
+    }
+  }
 }

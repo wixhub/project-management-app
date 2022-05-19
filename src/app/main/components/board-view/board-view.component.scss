@@ -4,6 +4,11 @@
   justify-content: center;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 .board {
   &__container {
     margin-top: 5vh;
