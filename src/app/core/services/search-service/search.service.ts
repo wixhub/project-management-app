@@ -46,13 +46,18 @@ export class SearchService {
     data.forEach((board: IBoardComplete) => {
       board.columns?.forEach((column: IColumnComplete) => {
         column.tasks?.forEach((task: ITask) => {
-          if (task.title.includes(key) || task.description.includes(key)) {
+          if (
+            key &&
+            (task.title.includes(key) || task.description.includes(key))
+          ) {
+            const foundIn = task.title.includes(key)
+              ? task.title
+              : task.description;
             results.push({
               boardId: board.id,
               boardName: board.title,
               columnName: column.title,
-              taskName: task.title,
-              taskDesc: task.description,
+              found: foundIn,
             });
           }
         });
@@ -66,6 +71,5 @@ export interface ISearchResults {
   boardId: string;
   boardName: string;
   columnName: string;
-  taskName: string;
-  taskDesc: string;
+  found: string;
 }
