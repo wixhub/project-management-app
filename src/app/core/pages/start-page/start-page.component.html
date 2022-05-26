@@ -1,0 +1,160 @@
+<div class="start-page__wrapper">
+  <h2 class="start-page__about-course">
+    {{ "startPage__about-course" | translate }}
+    <a
+      href="https://rs.school/angular/"
+      target="_blank"
+      class="start-page__about-course_link"
+      >{{ "startPage__about-course_link" | translate }}</a
+    >
+  </h2>
+  <div class="start-page__border"></div>
+
+  <section class="start-page__section start-page__left">
+    <div class="start-page__text-wrapper">
+      <h2 class="start-page__title start-page__title_left">
+        {{ "startPage__about-header" | translate }}
+      </h2>
+      <p class="start-page__description">
+        {{ "startPage__about-description" | translate }}
+      </p>
+    </div>
+    <img
+      class="start-page__img start-page__img_left"
+      src="../../../../assets/images/board-list.webp"
+      alt="board list view"
+    />
+  </section>
+
+  <button class="start-page__signup" routerLink="/auth/signup">
+    {{ "startPage__signup" | translate }}
+  </button>
+
+  <section class="start-page__section start-page__right">
+    <div class="start-page__img-wrapper">
+      <img
+        class="start-page__img start-page__img_right start-page__img_small"
+        src="../../../../assets/images/new-board.webp"
+        alt="new board view"
+      />
+      <img
+        class="start-page__img start-page__img_right start-page__img_small"
+        src="../../../../assets/images/new-column.webp"
+        alt="new column view"
+      />
+      <img
+        class="start-page__img start-page__img_right start-page__img_small"
+        src="../../../../assets/images/new-card.webp"
+        alt="new card view"
+      />
+    </div>
+    <div class="start-page__text-wrapper">
+      <h2 class="start-page__title start-page__title_right">
+        {{ "startPage__teamwork-header" | translate }}
+      </h2>
+      <p class="start-page__description start-page__description_right">
+        {{ "startPage__teamwork-description" | translate }}
+      </p>
+    </div>
+  </section>
+
+  <section class="start-page__section start-page__left">
+    <div class="start-page__text-wrapper">
+      <h2 class="start-page__title start-page__title_left">
+        {{ "startPage__board-header" | translate }}
+      </h2>
+      <p class="start-page__description">
+        {{ "startPage__board-description" | translate }}
+      </p>
+    </div>
+    <img
+      class="start-page__img start-page__img_left"
+      src="../../../../assets/images/board.webp"
+      alt="board view"
+    />
+  </section>
+
+  <section class="start-page__section start-page__right">
+    <img
+      class="start-page__img start-page__img_right"
+      src="../../../../assets/images/cards.webp"
+      alt="card list view"
+    />
+    <div class="start-page__text-wrapper">
+      <h2 class="start-page__title start-page__title_right">
+        {{ "startPage__card-header" | translate }}
+      </h2>
+      <p class="start-page__description start-page__description_right">
+        {{ "startPage__card-description" | translate }}
+      </p>
+    </div>
+  </section>
+
+  <div class="start-page__border"></div>
+
+  <section class="start-page__video">
+    <iframe
+      src="https://slides.com/yanasemenova/code/embed"
+      width="576"
+      height="420"
+      title="Code"
+      scrolling="no"
+      frameborder="0"
+      webkitallowfullscreen
+      mozallowfullscreen
+      allowfullscreen
+    ></iframe>
+  </section>
+
+  <div class="start-page__border"></div>
+
+  <section class="start-page__section">
+    <ul class="start-page__team">
+      <li class="start-page__member member">
+        <a href="https://github.com/wixhub" target="_blank">
+          <h4 class="member__header">
+            {{ "startPage__team-title_wixhub" | translate }}
+          </h4>
+        </a>
+        <img
+          src="../../../../assets/images/wixhub.webp"
+          alt="team member img"
+          class="member__img"
+        />
+        <p class="member__descr">
+          {{ "startPage__team-description_wixhub" | translate }}
+        </p>
+      </li>
+      <li class="start-page__member member">
+        <a href="https://github.com/valentine909" target="_blank">
+          <h4 class="member__header">
+            {{ "startPage__team-title_valentine909" | translate }}
+          </h4>
+        </a>
+        <img
+          src="../../../../assets/images/valentine909.webp"
+          alt="team member img"
+          class="member__img"
+        />
+        <p class="member__descr">
+          {{ "startPage__team-description_valentine909" | translate }}
+        </p>
+      </li>
+      <li class="start-page__member member">
+        <a href="https://github.com/ts-andrey" target="_blank">
+          <h4 class="member__header">
+            {{ "startPage__team-title_ts-andrey" | translate }}
+          </h4>
+        </a>
+        <img
+          src="../../../../assets/images/ts-andrey.webp"
+          alt="team member img"
+          class="member__img"
+        />
+        <p class="member__descr">
+          {{ "startPage__team-description_ts-andrey" | translate }}
+        </p>
+      </li>
+    </ul>
+  </section>
+</div>

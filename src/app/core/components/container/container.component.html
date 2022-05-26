@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()" class="sticky"></app-header>
+    <main>
+      <router-outlet></router-outlet>
+      <app-message-modal
+        *ngIf="isModalVisible"
+        (showMe)="isModalVisible = $event"
+        [text]="messageText"
+      ></app-message-modal>
+    </main>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

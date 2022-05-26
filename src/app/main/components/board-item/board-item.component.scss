@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+}
+
+.main-page {
+  &__item {
+    font-size: 1.2rem;
+    letter-spacing: -.5px;
+    padding: .4rem 1rem;
+    border: 1px solid #212121;
+    border-radius: 5px;
+
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #9DF3C4;
+    }
+  }
+
+  &__item-name {
+    letter-spacing: 1px;
+    font-weight: 500;
+  }
+
+  &__item-del {
+    margin-top: .3rem;
+    margin-left: .3rem;
+
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      color: #FF2E63;
+    }
+  }
+}

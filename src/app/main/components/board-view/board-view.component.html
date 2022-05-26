@@ -1,0 +1,27 @@
+<div class="board board__container">
+  <h3 class="board__header">
+    {{ "mainPage__board-item" | translate }}
+    <span class="board__header-name">{{ boardName }}</span>
+  </h3>
+  <div class="board__create-column" (click)="onClickCreateColumn()">
+    + {{ "AddColumn" | translate }}
+  </div>
+  <ul cdkDropListGroup *ngIf="boardColumnArr$ | async; let columns">
+    <div
+      cdkDropList
+      class="board__column-list"
+      cdkDropListOrientation="horizontal"
+      [cdkDropListData]="listData"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <app-board-column
+        cdkDrag
+        *ngFor="let column of columns"
+        [column]="column"
+        [boardId]="boardId"
+        (removed)="deleteItem()"
+      >
+      </app-board-column>
+    </div>
+  </ul>
+</div>

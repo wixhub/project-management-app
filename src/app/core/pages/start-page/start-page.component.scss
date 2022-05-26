@@ -1,0 +1,281 @@
+.start-page {
+  &__wrapper {
+    padding: 0 3vw;
+    box-shadow: 0 0 20vw 7vw #212121;
+  }
+
+  &__about-course {
+    margin: 5vh auto 0 auto;
+    width: 50vw;
+    text-align: center;
+    font-size: 1.5rem;
+
+    &_link {
+      color: inherit;
+      border-bottom: 1px solid #212121;
+      transition: all .25s;
+
+      &:hover {
+        cursor: pointer;
+        color: #FF2E63;
+      }
+    }
+  }
+
+  &__video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-header {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__section {
+    width: 65vw;
+    margin-top: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:first-of-type {
+      margin-top: 10vh;
+    }
+
+    &:last-of-type {
+      margin-bottom: 7vh;
+    }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  &__img-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    max-height: 15rem;
+    padding: 1vh 1vw;
+
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+
+    &_right {
+      margin-right: 1vw;
+    }
+
+    &_left {
+      margin-left: 1vw;
+    }
+
+    &_small {
+      width: 12vw;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    letter-spacing: 1.7px;
+    line-height: 1.1;
+
+    &_left {
+      margin-left: -.5vw;
+      border-radius: 10px 3px 3px 3px;
+      padding: .5vh 0 0 .5vw;
+      border-top: 2px solid #212121;
+      border-left: 2px solid #212121;
+      box-shadow: inset 3px 3px 3px #21212118;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: 1.3px;
+    line-height: 1.3;
+
+    &_right {
+      border-radius: 3px 3px 10px 3px;
+      padding: 0 .5vw .5vh 0;
+      border-bottom: 2px solid #212121;
+      border-right: 2px solid #212121;
+      box-shadow: inset -3px -3px 3px #21212123;
+    }
+  }
+
+  &__signup {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+    width: fit-content;
+    padding: .7rem 3rem;
+    margin-top: 4vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.4rem;
+    background-color: #212121;
+    color: #FF2E63;
+
+    transition: all .25s;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 2px 2px 8px lighten(#212121, 20%);
+    }
+  }
+
+  &__border {
+    margin: 8vh auto 4vh auto;
+    height: 3px;
+    width: 80%;
+
+    background-image: linear-gradient(to right, #212121 50%, rgba(255, 255, 255, 0) 20%);
+    background-position: top;
+    background-size: 3vw 3px;
+    background-repeat: repeat-x;
+  }
+
+  &__team {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 3vh;
+  }
+
+  &__member {
+    width: 70%;
+    display: grid;
+    justify-items: center;
+
+    &:first-of-type {
+      width: 35%;
+      grid-column: span 2;
+    }
+
+  }
+}
+
+.member {
+  &__header {
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    margin-bottom: 1vh;
+  }
+
+  &__img {
+    border-radius: 50%;
+    height: 15vh;
+    margin-bottom: 2vh;
+  }
+
+  &__descr {
+    font-size: 1.15rem;
+    letter-spacing: 1.2px;
+    line-height: 1.3;
+    font-weight: 300;
+  }
+}
+
+:host {
+  width: 100vw;
+  display: grid;
+  justify-content: center;
+  background-color: #BBE1FA;
+  color: #212121;
+  overflow: hidden;
+}
+
+@media (max-width:1250px) {
+  .start-page {
+    &__section {
+      width: 80vw;
+    }
+  }
+}
+
+@media (max-width:1150px) {
+  .start-page {
+    &__wrapper {
+      padding: 0;
+      box-shadow: none;
+    }
+
+    &__section {
+      width: 100vw;
+    }
+  }
+}
+
+@media (max-width:900px) {
+  .start-page {
+
+    &__about-course {
+      width: 85vw;
+    }
+
+    &__section {
+      flex-direction: column;
+    }
+
+    &__text-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+    }
+
+    &__img {
+      max-height: 15rem;
+
+      &-wrapper {
+        margin-bottom: 2vh;
+      }
+
+      &_right {
+        margin-right: 0;
+        margin-bottom: 2vh;
+      }
+
+      &_left {
+        margin-top: 2vh;
+        margin-left: 0;
+      }
+
+      &_small {
+        width: 30vw;
+        margin-bottom: 0;
+      }
+    }
+
+    &__team {
+      justify-items: center;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-row-gap: 3vh;
+    }
+
+    &__member {
+      width: 80%;
+      display: grid;
+      justify-items: center;
+
+      &:first-of-type {
+        width: 80%;
+        grid-column: span 1;
+      }
+
+    }
+  }
+}

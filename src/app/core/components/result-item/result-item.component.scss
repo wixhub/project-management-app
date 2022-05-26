@@ -1,0 +1,29 @@
+.result__item {
+  display: flex;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 5px 10px;
+  gap: 10px;
+}
+
+.result__link {
+  display: block;
+  font-size: 24px;
+  color: #BBE1FA;
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    color: #FF2E63;
+  }
+}
+
+.result__container {
+  display: flex;
+  gap: 5px;
+}
+
+.result__important {
+  font-style: italic;
+  color: orangered;
+}

@@ -1,0 +1,14 @@
+<div class='form__container'>
+  <h3 class='form__title'>{{ "Delete-profile-question" | translate }}</h3>
+  <div class="buttons-container">
+    <button
+      (click)="deleteUser()"
+      class='form__submit btn-delete'>{{ "Delete" | translate }}
+    </button>
+    <a class="button__link" routerLink="/auth/profile">
+      <button
+        class='form__submit'>{{ "Cancel" | translate }}
+      </button>
+    </a>
+  </div>
+</div>

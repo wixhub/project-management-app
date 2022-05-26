@@ -1,0 +1,44 @@
+<form class='form__container' [formGroup]='loginForm' (ngSubmit)="signin()">
+  <h3 class='form__title'>{{ "LoginPage" | translate }}</h3>
+  <p class='form__question'>{{ "Signup-question" | translate }}<a class="form__link" routerLink="/auth/signup"
+  >{{ "Signup-welcome" | translate }}</a></p>
+
+  <label for="login" class='form__input-title'>{{ "Login-name" | translate }}</label>
+  <input
+    type='text'
+    class='form__input'
+    id='login'
+    formControlName='login'
+    autocomplete='off'
+    required
+    [ngClass]='login?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='login?.hasError("required")'>
+      {{ "Validation-login" | translate }}
+    </p>
+  </div>
+
+  <label for="password" class='form__input-title'>{{ "Password" | translate }}</label>
+  <input
+    type='password'
+    class='form__input'
+    id='password'
+    formControlName='password'
+    autoComplete="current-password"
+    required
+    [ngClass]='password?.errors ? "alert-input" : ""'>
+  <div class='alert'>
+    <p
+      class='validation-error'
+      *ngIf='password?.hasError("required")'>
+      {{ "Validation-password" | translate }}
+    </p>
+  </div>
+  <button
+    class='form__submit'
+    type="submit"
+    [disabled]='haveValidationErrors()'>{{ "Login" | translate }}
+  </button>
+</form>

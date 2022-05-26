@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  background-color: #1FAB89;
+  color: #fff;
+}
+
+a {
+  margin: 0 4px 0 4px;
+  color: inherit;
+
+  transition: all .25s;
+
+  &:hover {
+    cursor: pointer;
+    color: #BBE1FA;
+  }
+}
+
+img {
+  width: 80px;
+  margin: 20px 0 20px 0;
+}

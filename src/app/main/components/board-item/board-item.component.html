@@ -1,0 +1,7 @@
+<li class="main-page__item" (click)="onClickOpenBoard()">
+  <span class="main-page__item-descr">{{
+    "mainPage__board-item" | translate
+  }}</span
+  ><span class="main-page__item-name">{{ item.title }}</span>
+</li>
+<mat-icon class="main-page__item-del" (click)="deleteBoard()">delete</mat-icon>
